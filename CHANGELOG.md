@@ -19,12 +19,17 @@
 
 ### 变更
 
-- 重写并扩充一批 Create 配方（压块、混合、切割、序列组装等）
-- 追加红石强化石等原创材料的矿石开凿产出
-- 大幅提高 AdvancedAE 量子四件套的合成成本
-- 大幅提高 AE2 无线物流系统的制造成本，限制其在前期的应用
-- 新增人造钻石生产链，以及强化深板岩、紫水晶母岩的高成本人造方法
-- 移除汤圆、生汤圆及其全部配方
+- 「伤害加成」附魔补充量子头盔与量子胸甲的加成条目
+- 未至之地（Regions Unexplored）补齐 137 条简体中文词条，覆盖群系、方块、物品与配置界面
+- 若干 Create 配方微调
+
+### 移除
+
+- 汤圆、生汤圆及其全部配方
+
+### 战利品表
+
+- 调整监守者的掉落表
 
 ## [3.1.0] - 2026-02-24
 
@@ -195,12 +200,17 @@
 
 ### Changed
 
-- Rewrote and extended a batch of Create recipes (compacting, mixing, cutting, sequenced assembly and others)
-- Added ore excavation output for original materials such as the redstone reinforce gem
-- Raised the crafting cost of the AdvancedAE quantum armour set sharply
-- Raised the cost of AE2 wireless logistics substantially, keeping wireless access out of reach early on
-- Added a synthetic diamond chain, plus deliberately expensive player-made routes to reinforced deepslate and budding amethyst
-- Removed the tangyuan and raw tangyuan items along with all of their recipes
+- Damage Bonus enchantment: added entries for the quantum helmet and chestplate
+- Regions Unexplored: filled in 137 missing Simplified Chinese entries covering biomes, blocks, items and the config screen
+- Minor Create recipe adjustments
+
+### Removed
+
+- The tangyuan and raw tangyuan items, along with all of their recipes
+
+### Loot tables
+
+- Adjusted the warden's loot table
 
 ## [3.1.0] - 2026-02-24
 
