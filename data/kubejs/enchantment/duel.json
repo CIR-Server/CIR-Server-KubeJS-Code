@@ -1,0 +1,89 @@
+{
+  "type": "minecraft:enchantment",
+  "description": {
+    "translate": "enchantment.kubejs.duel"
+  },
+  "anvil_cost": 6,
+  "max_level": 3,
+  "weight": 1,
+  "min_cost": {
+    "base": 24,
+    "per_level_above_first": 6
+  },
+  "max_cost": {
+    "base": 28,
+    "per_level_above_first": 3
+  },
+  "supported_items": "#minecraft:enchantable/weapon",
+  "slots": [
+    "mainhand"
+  ],
+  "exclusive_set": [],
+  "flags": {
+    "curse": true
+  },
+  "effects": {
+    "minecraft:post_attack":[
+      {
+        "affected": "attacker",
+        "effect": {
+        "type":"apply_mob_effect",
+        "to_apply":"minecraft:strength",
+        "min_amplifier":{
+         "type": "linear",
+         "base": 0,
+         "per_level_above_first": 1
+        },
+        "max_amplifier":{
+         "type": "linear",
+         "base": 1,
+         "per_level_above_first": 1
+        },
+        "min_duration":0.5,
+        "max_duration":2
+      },
+        "enchanted": "attacker"
+      },
+      {
+        "affected": "attacker",
+        "effect": {
+        "type":"apply_mob_effect",
+        "to_apply":"minecraft:hunger",
+        "min_amplifier":{
+         "type": "linear",
+         "base": 0,
+         "per_level_above_first": 1
+        },
+        "max_amplifier":{
+         "type": "linear",
+         "base": 1,
+         "per_level_above_first": 1
+        },
+        "min_duration":0.5,
+        "max_duration":2
+      },
+        "enchanted": "attacker"
+      },
+     {
+        "affected": "attacker",
+        "effect": {
+        "type":"apply_mob_effect",
+        "to_apply":"kubejs:vulnerable",
+        "min_amplifier":{
+         "type": "linear",
+         "base": 0,
+         "per_level_above_first": 2
+        },
+        "max_amplifier":{
+         "type": "linear",
+         "base": 2,
+         "per_level_above_first": 2
+        },
+        "min_duration":0.5,
+        "max_duration":2
+      },
+        "enchanted": "attacker"
+      }
+    ]
+  }
+}

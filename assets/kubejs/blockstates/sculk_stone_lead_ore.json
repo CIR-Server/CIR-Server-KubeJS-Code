@@ -1,0 +1,7 @@
+{
+    "variants":{
+        "":{
+            "model":"kubejs:block/sculk_stone_lead_ore"
+        }
+    }
+}

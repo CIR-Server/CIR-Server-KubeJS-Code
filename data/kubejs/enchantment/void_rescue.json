@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:enchantment",
+  "description": {
+    "translate": "enchantment.kubejs.void_rescue"
+  },
+  "anvil_cost": 8,
+  "max_level": 1,
+  "weight": 2,
+  "min_cost": {
+    "base": 20,
+    "per_level_above_first": 20
+  },
+  "max_cost": {
+    "base": 30,
+    "per_level_above_first": 8
+  },
+  "supported_items": "#minecraft:enchantable/head_armor",
+  "primary_items": null,
+  "slots": [
+    "head"
+  ]
+}

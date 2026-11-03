@@ -1,0 +1,19 @@
+{
+  "type": "createoreexcavation:vein",
+  "amountMultiplierMin": 8.0,
+  "amountMultiplierMax": 24.0,
+  "biomeWhitelist": "minecraft:is_overworld",
+  "finite": "default",
+  "icon": {
+    "count": 1,
+    "id": "expandeddelight:salt_rock"
+  },
+  "name": "{\"translate\":\"vein.kubejs.salt_rock\"}",
+  "placement": {
+    "salt": 1464227999,
+    "separation": 16,
+    "spacing": 64
+  },
+  "priority": 0,
+  "id":"kubejs:salt_rock_vein"
+}

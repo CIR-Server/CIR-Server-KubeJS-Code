@@ -1,0 +1,7 @@
+{
+    "variants":{
+        "":{
+            "model":"kubejs:block/reinforced_quartz_glass"
+        }
+    }
+}

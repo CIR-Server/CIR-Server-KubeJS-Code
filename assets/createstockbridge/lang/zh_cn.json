@@ -1,0 +1,15 @@
+{
+  "block.createstockbridge.ae_bridge": "AE 物流桥",
+  "createstockbridge.ponder.ae_stockbridge.header": "将物流系统与应用能源 (AE2) 连接",
+  "createstockbridge.ponder.ae_stockbridge.text_1": "AE 物流桥用于连接机械动力 (Create) 物流系统与应用能源 (AE2) 网络",
+  "createstockbridge.ponder.ae_stockbridge.text_2": "放置前请先右击以将其绑定到物流网络",
+  "createstockbridge.ponder.ae_stockbridge.text_3": "将 AE 物流桥的包裹地址设置为与货物蛙港地址相匹配",
+  "createstockbridge.ponder.ae_stockbridge.text_4": "应用能源 (AE2)",
+  "createstockbridge.ponder.ae_stockbridge.text_5": "应用能源 (AE2)",
+  "createstockbridge.ponder.ae_stockbridge.text_6": "AE2 可通过“合成”请求物品",
+  "createstockbridge.ponder.ae_stockbridge.text_7": "机械动力可通过物流系统请求存储在 AE2 网络中的物品",
+  "gui.createstockbridge.address": "包裹地址：",
+  "gui.stockbridge.remote_items": "机械动力物流系统物品",
+  "item.createstockbridge.request_pattern": "请求样板",
+  "tooltip.stockbridge.remote_item": "远程系统中的物品"
+}

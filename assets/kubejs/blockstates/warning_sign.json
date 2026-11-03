@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "kubejs:block/warning_sign",
+      "y": 270
+    },
+    "facing=north": {
+      "model": "kubejs:block/warning_sign",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "kubejs:block/warning_sign"
+    },
+    "facing=west": {
+      "model": "kubejs:block/warning_sign",
+      "y": 90
+    }
+  }
+}

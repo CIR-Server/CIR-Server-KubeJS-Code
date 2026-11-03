@@ -1,0 +1,38 @@
+{
+    "music.banana":{
+        "sounds":[
+            {
+                "name": "kubejs:banana",
+                "stream":true,
+                "attenuation_distance": 24
+            }
+        ]
+    },
+    "music.gong_xi_fa_cai":{
+        "sounds":[
+            {
+                "name": "kubejs:gong_xi_fa_cai",
+                "stream":true,
+                "attenuation_distance": 24
+            }
+        ]
+    },
+    "music.sega_maimai":{
+        "sounds":[
+            {
+                "name": "kubejs:maimai",
+                "stream":true,
+                "attenuation_distance": 16
+            }
+        ]
+    },
+    "music.creeper":{
+        "sounds":[
+            {
+                "name": "kubejs:creeper",
+                "stream":true,
+                "attenuation_distance": 16
+            }
+        ]
+    }
+}

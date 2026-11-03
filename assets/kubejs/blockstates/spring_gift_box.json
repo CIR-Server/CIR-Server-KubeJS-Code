@@ -1,0 +1,7 @@
+{
+    "variants":{
+        "":{
+            "model":"kubejs:block/spring_gift_box"
+        }
+    }
+}

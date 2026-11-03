@@ -1,0 +1,7 @@
+{
+    "variants":{
+        "":{
+            "model":"kubejs:block/sculk_stone_reinforce_gem_ore"
+        }
+    }
+}

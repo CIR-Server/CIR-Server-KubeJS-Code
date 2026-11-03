@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "kubejs:block/random_block",
+      "y": 270
+    },
+    "facing=north": {
+      "model": "kubejs:block/random_block",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "kubejs:block/random_block"
+    },
+    "facing=west": {
+      "model": "kubejs:block/random_block",
+      "y": 90
+    }
+  }
+}

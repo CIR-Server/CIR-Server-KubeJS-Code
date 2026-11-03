@@ -1,0 +1,87 @@
+{
+  "type": "minecraft:enchantment",
+  "description": {
+    "translate": "enchantment.kubejs.health_theft"
+  },
+  "anvil_cost": 8,
+  "max_level": 4,
+  "weight": 1,
+  "min_cost": {
+    "base": 2,
+    "per_level_above_first": 5
+  },
+  "max_cost": {
+    "base": 8,
+    "per_level_above_first": 3
+  },
+  "supported_items": "#minecraft:enchantable/chest_armor",
+  "slots": [
+    "chest"
+  ],
+  "exclusive_set": "minecraft:thorns",
+  "effects": {
+    "minecraft:post_attack": [
+      {
+        "affected": "attacker",
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:damage_entity",
+              "damage_type": "minecraft:thorns",
+              "max_damage": 5.0,
+              "min_damage": 2.0
+            },
+            {
+              "type": "minecraft:damage_item",
+              "amount": 4.0
+            }
+          ]
+        },
+        "enchanted": "victim",
+        "requirements": {
+          "chance": {
+            "type": "minecraft:enchantment_level",
+            "amount": {
+              "type": "minecraft:linear",
+              "base": 0.2,
+              "per_level_above_first": 0.2
+            }
+          },
+          "condition": "minecraft:random_chance"
+        }
+      },
+      {
+        "affected":"victim",
+        "effect":{
+          "type":"minecraft:apply_mob_effect",
+          "to_apply":"minecraft:regeneration",
+          "min_amplifier":0,
+          "max_amplifier":2,
+          "min_duration":{
+            "type": "linear",
+            "base": 1,
+            "per_level_above_first": 1
+            },
+          "max_duration":{
+            "type": "linear",
+            "base": 2,
+            "per_level_above_first": 1
+            }
+        },
+        "enchanted": "victim",
+        "requirements": {
+          "chance": {
+            "type": "minecraft:enchantment_level",
+            "amount": {
+              "type": "minecraft:linear",
+              "base": 0.4,
+              "per_level_above_first": 0.15
+            }
+          },
+          "condition": "minecraft:random_chance"
+        }
+      }
+    ]
+  }
+}

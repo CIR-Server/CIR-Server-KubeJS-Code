@@ -1,0 +1,131 @@
+{
+  "description": {
+    "translate": "enchantment.kubejs.damage_bonus"
+  },
+  "anvil_cost": 6,
+  "max_level": 5,
+  "weight": 1,
+  "min_cost": {
+    "base": 42,
+    "per_level_above_first": 11
+  },
+  "max_cost": {
+    "base": 48,
+    "per_level_above_first": 8
+  },
+  "supported_items": "#minecraft:enchantable/weapon",
+  "primary_items":null,
+  "slots": [
+    "mainhand"
+  ],
+  "exclusive_set": "#minecraft:exclusive_set/damage",
+  "effects": {
+    "minecraft:damage": [
+      {
+        "effect": {
+          "type":"add",
+          "value":{
+          "type": "linear",
+          "base": 3,
+          "per_level_above_first": 1.5
+        }
+        }
+      },
+      {
+        "requirements": {
+          "condition": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "type": "#minecraft:sensitive_to_smite"
+          }
+        },
+        "effect": {
+          "type":"add",
+          "value":{
+          "type": "linear",
+          "base": 3,
+          "per_level_above_first": 2.5
+        }
+        }
+      },
+      {
+        "requirements": {
+          "condition": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "type": "#deeperdarker:sensitive_to_sculk_smite"
+          }
+        },
+        "effect": {
+          "type":"add",
+          "value":{
+          "type": "linear",
+          "base": 4,
+          "per_level_above_first": 3
+        }
+        }
+      },
+      {
+        "requirements": {
+          "condition": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "type": "minecraft:player",
+            "equipment":{
+              "chest":{
+                "items":["advanced_ae:quantum_chestplate"]
+              }
+            }
+          }
+        },
+        "effect": {
+          "type":"add",
+          "value":{
+          "type": "linear",
+          "base": 5,
+          "per_level_above_first": 3
+        }
+        }
+      },
+      {
+        "requirements": {
+          "condition": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "type": "minecraft:player",
+            "equipment":{
+              "head":{
+                "items":["advanced_ae:quantum_helmet"]
+              }
+            }
+          }
+        },
+        "effect": {
+          "type":"add",
+          "value":{
+          "type": "linear",
+          "base": 5,
+          "per_level_above_first": 3
+        }
+        }
+      },
+      {
+        "requirements": {
+          "condition": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "type": "minecraft:ender_dragon"
+          }
+        },
+        "effect": {
+          "type":"add",
+          "value":{
+          "type": "linear",
+          "base": 6,
+          "per_level_above_first": 6
+        }
+        }
+      }
+    ]
+  }
+}
