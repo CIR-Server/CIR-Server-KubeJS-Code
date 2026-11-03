@@ -14,3 +14,9 @@ desktop.ini
 *.bak
 *.bak_*
 *~
+
+# ProbeJS debug output
+config/probe-settings.json
+**/jsconfig.json
+.probe/
+*.d.ts
