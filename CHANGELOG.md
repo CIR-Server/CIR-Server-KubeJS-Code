@@ -15,7 +15,7 @@
 - **「机械动力：应用机械」配方重建**。该模组自身缺陷导致配方无法加载，且截至本版发布未修复，服务器已将其移除。其提供的 11 个序列装配配方与 11 个半成品物品在此以 KubeJS 完整重建，同时恢复被其覆盖的 AE2 压印器配方逻辑。
 - **星辉构件**（`kubejs:stella_mechanism`）。序列组装产物，稀有度「稀有」，可堆叠。以精密构件为原料，经注入液态经验、安装钻石、安装星辉红石粉、冲压各一次为一轮，循环两轮；80% 产出星辉构件，20% 产出钻石。
 - **电路切片器配方扩展**。晶体装配器输入由 8 项增至 9 项，新增一项为星辉构件。
-- **AE2 动力合成配方**。新增量子四件套等 AE2 相关物品的动力合成配方。
+- **恢复 AE2 配方**。恢复 v2.2 版本构建的若干 AE2 配方，部分配方有改动。
 
 ### 变更
 
@@ -196,7 +196,7 @@
 - **Rebuilt recipe set for Create: Applied Kinetics.** A defect in the mod stopped its recipes from loading and it had not been fixed as of this release, so the server removed it. Its 11 sequenced assembly recipes and 11 incomplete items are rebuilt here in full with KubeJS, and the AE2 inscriber recipe logic it had been overriding is restored alongside them.
 - **Stella Mechanism** (`kubejs:stella_mechanism`). A sequenced assembly product, rarity Rare, stackable. Built from a precision mechanism: inject liquid experience, install a diamond, install stella redstone dust and press once — one cycle, performed twice. 80% yields a stella mechanism, 20% yields a diamond.
 - **Extended circuit cutter recipe.** The crystal assembler now takes nine inputs instead of eight, with a stella mechanism as the ninth.
-- **AE2 mechanical crafting recipes**, including the quantum armour set.
+- **Restored AE2 recipes.** Several AE2 recipes built in v2.2 are restored, some of them with changes.
 
 ### Changed
 
