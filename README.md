@@ -9,6 +9,14 @@
 
 CIR 服务器使用的 KubeJS 脚本集合，覆盖配方、自定义内容、附魔、掉落表和本地化。
 
+KubeJS scripts running on the CIR Minecraft server — recipes, custom content, enchantments, loot tables and localization.
+
+**中文** ｜ [English](#english)
+
+---
+
+# 中文
+
 ## 功能
 
 ### 配方重建与改造
@@ -31,11 +39,11 @@ CIR 服务器使用的 KubeJS 脚本集合，覆盖配方、自定义内容、�
 
 ### 新增材料
 
-**星辉量子宝石**（`kubejs:stella_quantum_gem`）：只能在宝箱中获取，无法合成，其加工产物**星辉红石粉**（`kubejs:stella_redstone_dust`）可以用于极高级的合成用途如量子套装与AE2无线传输系统等，也可用于制造**星辉构件**（`kubejs:stella_mechanism`）制造电路压印机（模组：Extended AE）将电路板的生产由机械动力的序列组装恢复为AE2的直接生产。
-**永恒赛特斯宝石**（`kubejs:eternal_certus_gem`）：只能在宝箱中获取或使用多种珍稀材料由反应仓（模组：Extended AE）进行合成，可用于256K存储组件等AE2高阶芯片的合成。
-**红石强化石**（`kubejs:redstone_reinforce_gem`）：可以在下界通过机械动力：矿石开凿（Create: Ore Excavation）模组开采矿脉获得，其加工产物**强化液体**（`kubejs:reinforce_liquid`）可用于制备**强化红石粉**（`kubejs:reinforced_redstone_dust`）用于多种合成用途，是启动AE2中后期发展的必须品。
-**退化宝石**（`kubejs:degeneration_gem`）：可以在下界通过机械动力：矿石开凿（Create: Ore Excavation）模组开采矿脉获得，右键**强化过的方块**（`*:reinforced_*`）使用，使其附近所有同类方块变化为未强化状态，可用于处理强化深板岩（前文已介绍，在本包中可被制造）放置失误等情况。
-**远古残骸粉末**（`kubejs:ancient_debris_dust`）：由远古残骸经过**粉碎**`create.crushing()`获得，粉碎时有概率额外获得，可用于下界合金的增产。
+**星辉量子宝石** `kubejs:stella_quantum_gem`：只能在宝箱中获取，无法合成，其加工产物**星辉红石粉** `kubejs:stella_redstone_dust` 可以用于极高级的合成用途如量子套装与AE2无线传输系统等，也可用于制造**星辉构件** `kubejs:stella_mechanism` 制造电路压印机（模组：Extended AE）将电路板的生产由机械动力的序列组装恢复为AE2的直接生产。
+**永恒赛特斯宝石** `kubejs:eternal_certus_gem` ：只能在宝箱中获取或使用多种珍稀材料由反应仓（模组：Extended AE）进行合成，可用于256K存储组件等AE2高阶芯片的合成。
+**红石强化石** `kubejs:redstone_reinforce_gem` ：可以在下界通过机械动力：矿石开凿（Create: Ore Excavation）模组开采矿脉获得，其加工产物**强化液体** `kubejs:reinforce_liquid` 可用于制备**强化红石粉** `kubejs:reinforced_redstone_dust` 用于多种合成用途，是启动AE2中后期发展的必须品。
+**退化宝石** `kubejs:degeneration_gem` ：可以在下界通过机械动力：矿石开凿（Create: Ore Excavation）模组开采矿脉获得，右键**强化过的方块** `*:reinforced_*` 使用，使其附近所有同类方块变化为未强化状态，可用于处理强化深板岩（前文已介绍，在本包中可被制造）放置失误等情况。
+**远古残骸粉末** `kubejs:ancient_debris_dust` ：由远古残骸经过**粉碎**`create.crushing()`获得，粉碎时有概率额外获得，可用于下界合金的增产。
 
 ### 附魔与掉落表
 
@@ -108,5 +116,114 @@ CIR 服务器使用的 KubeJS 脚本集合，覆盖配方、自定义内容、�
 当前：**4.0.0**，详见 [CHANGELOG.md](CHANGELOG.md)。
 
 ## 许可
+
+[CC BY-SA 4.0](LICENSE)
+
+---
+
+# English
+
+## Features
+
+### Recipe rebuilds and reworks
+
+- The server removed Create: Applied Kinetics. A bug in the mod stopped its recipes from loading, and it had not been fixed as of this release. Its 11 sequenced assembly recipes and 11 incomplete items are rebuilt here in full with KubeJS, and the AE2 inscriber recipe logic that the mod had been overriding is restored alongside them.
+
+- A batch of Create recipes was rewritten and extended (compacting, mixing, cutting, sequenced assembly and others). Ore excavation (Create: Ore Excavation) output was added for original materials such as the redstone reinforce gem, and the crafting cost of the four quantum armour pieces from AdvancedAE was raised sharply to keep the pack balanced. A synthetic diamond chain was added, together with deliberately expensive player-made routes to **Reinforced Deepslate** and **Budding Amethyst**, so that those blocks can be placed wherever the player wants them.
+
+- The cost of AE2's wireless logistics was raised substantially. Wireless access is kept out of reach early on, so the pack still revolves around Create.
+
+- Every removed vanilla recipe is recorded in the removal list, so the originals can be traced.
+
+### Custom content
+
+- **Items**: sixty-odd, including the 256K cell component chain, the stella quantum gem, the eternal certus gem, the redstone reinforce gem, the synthetic diamond chain, and four sets of right-click power orbs
+- **Blocks**: reinforced glass, random block, recipe reloader, festival lantern, and a few others
+- **Fluids**: assorted juices and ciders, mysterious liquid, reinforce liquid
+- **Mob effects**: Vulnerable, Golem Support, Antitoxic, Burning, Health Freeze, Health Lose
+- **Sounds**: several clips lifted from Chinese internet memes
+
+### New materials
+
+**Stella Quantum Gem** `kubejs:stella_quantum_gem` — obtainable only from loot chests, never crafted. Its processed form, **Stella Redstone Dust** `kubejs:stella_redstone_dust`, feeds very high-end recipes such as the quantum armour set and AE2 wireless transmission, and is also used to make the **Stella Mechanism** `kubejs:stella_mechanism` that the circuit imprinter (Extended AE) needs to move circuit board production from Create's sequenced assembly back to AE2's direct processing.
+
+**Eternal Certus Gem** `kubejs:eternal_certus_gem` — obtained from loot chests, or crafted from a mix of rare materials in the Reaction Chamber (Extended AE). Used in AE2's high-tier components such as the 256K cell.
+
+**Redstone Reinforce Gem** `kubejs:redstone_reinforce_gem` — mined from ore veins in the Nether through Create: Ore Excavation. Its processed form, **Reinforce Liquid** `kubejs:reinforce_liquid`, is used to prepare **Reinforced Redstone Dust** `kubejs:reinforced_redstone_dust`, which feeds a range of recipes and is required to get AE2's mid-to-late game moving.
+
+**Degeneration Gem** `kubejs:degeneration_gem` — mined from ore veins in the Nether through Create: Ore Excavation. Right-click a **reinforced block** `*:reinforced_*` with it and every matching block nearby reverts to its unreinforced state. Useful when a Reinforced Deepslate (craftable in this pack, as noted above) has been placed in the wrong spot.
+
+**Ancient Debris Dust** `kubejs:ancient_debris_dust` — produced by **crushing** ancient debris with `create.crushing()`, with a chance of bonus output. Used to stretch netherite production.
+
+### Enchantments and loot tables
+
+Nine custom enchantments: Blood Thirsty, Damage Bonus, Duel, Health Lose, Health Theft, Rapid Cooldown, Toxic, Void Rescue and XP Looting. Their effects can be read in-game from the tooltip.
+
+Loot tables were adjusted for the ender dragon, the warden, ancient city chests, end ship chests and woodland mansion chests.
+
+### Event logic
+
+Block, entity, item and player event scripts, covering the duel system, login notices, chat command easter eggs, a redemption code system, and assorted behaviour tweaks for machines and entities.
+
+### Localization
+
+Language file overrides for twenty mods live under `assets/`. They load as a resource pack, replace same-named keys only, and never touch a mod jar.
+
+## Requirements
+
+### Baseline
+
+| Dependency | Required | Version |
+|---|---|---|
+| Minecraft | **Yes** | 1.21.1 |
+| NeoForge | **Yes** | 21.1+ |
+| Create | **Yes** | 6.x |
+| AE2 | **Yes** | 19.x |
+| KubeJS | **Yes** | 7.x.x |
+
+### Script content dependencies
+
+The following mods are referenced directly by recipes, items or data in these scripts. Missing any one disables the affected entries or throws an error while loading; everything else keeps working.
+
+| Mod | Referenced for |
+|---|---|
+| Deeper and Darker | Recipes and loot tables, by far the heaviest use |
+| AdvancedAE | Quantum armour set, reaction chamber |
+| Farmer's Delight | Food and cutting recipes |
+| Waystones | Waystone recipes |
+| Expanded Delight | Ingredient recipes |
+| Create Ore Excavation | Ore vein types and drilling recipes |
+| Create Crafts & Addition | Stress-based generation and cables |
+| ExtendedAE | Circuit cutter, crystal assembler |
+| Create Enchantment Industry | Liquid experience, enchanting |
+| Supplementaries | A few recipes |
+| Create: Confectionery | Confectionery recipes |
+| Create: Mobile Packages | Package handling |
+| Guard Villagers | Recruitment order |
+| Computercraft | A few recipes |
+| Create: Dragons Plus | A few recipes |
+| Regions Unexplored | A few recipes |
+| End's Delight | Food recipes |
+| Create: Things and Misc | A few recipes |
+| Create Diesel Generators | A few recipes |
+| Touhou Little Maid | A few recipes |
+| Xaero's Minimap / World Map | Map-related data |
+
+## Layout
+
+| Directory | Contents |
+|---|---|
+| `startup_scripts/` | Item, block, fluid, mob effect and sound registration |
+| `server_scripts/` | Recipes, server events, enchantment logic |
+| `client_scripts/` | Tooltips and client-side tweaks |
+| `assets/` | Textures, sounds and language overrides |
+| `data/` | Enchantments, loot tables and recipe overrides |
+| `config/` | KubeJS and ProbeJS settings |
+
+## Version
+
+Current: **4.0.0** — see [CHANGELOG.md](CHANGELOG.md).
+
+## License
 
 [CC BY-SA 4.0](LICENSE)
