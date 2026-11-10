@@ -8,6 +8,25 @@
 
 # 中文
 
+## [4.0.0-TechTreeVersion] - 2026-11-11
+
+### 新增
+
+- **科技树系统**。基于 Chapters 的 stage 机制，把机械动力、应用能源及其附属模组的配方按科技阶段分批次解锁。共 15 个阶段：石器时代 → 铁器时代 → 安山时代 → 精密时代 → 外星时代 → 充能时代 → 256K 时代 → 永恒赛特斯 → 应用发电机时代 → 奇点 1M / 4M / 16M / 64M → 星辉构件。每个阶段解锁对应的物品与配方，未解锁的内容在 JEI 中隐藏且无法合成。
+- **进度树**。新增 12 个 KubeJS 进度节点，以「Welcome to CIR」为根，分三条主线：「全新宝石？」与「稀世珍宝」→「星辉闪耀」→「星辉重构」；「医学奇迹」→「无敌模式」→「概念神」；「电力时代」→「充能时代」。其中「充能时代」「星辉重构」「概念神」为隐藏挑战进度。
+- **反应仓配方**。强化红石粉改为 AdvancedAE 反应仓产出，一次 32 个，消耗 500K FE。
+- **机械动力研磨配方**。AE2 本体、ExtendedAE、AdvancedAE、应用通量、应用发电机的共 12 种粉末补充机械动力研磨路径。这些粉末原本只有 AE2 压印器产出，且配方都是单一物品输入，研磨产出保持 1:1。
+- **状态效果图标**。新增 9 个状态效果的物品图标，用于成就与进度展示。
+
+### 变更
+
+- AE2 系物品清单改为硬编码，规避 KubeJS 运行时遍历时的字符串类型问题。模组版本更新后需要重新导出该清单。
+- 模组翻译从 KubeJS 的 `assets` 目录迁出，改由独立的汉化资源包提供。仓库不再包含这些语言文件。
+
+### 移除
+
+- 服务端兑换码系统。该功能已内置进 Create CIR Addition 模组，KubeJS 侧的实现不再需要。
+
 ## [4.0.0] - 2026-11-03
 
 ### 新增
@@ -188,6 +207,25 @@
 ---
 
 # English
+
+## [4.0.0-TechTreeVersion] - 2026-11-11
+
+### Added
+
+- **Tech tree system**. Built on Chapters' stage mechanic, it unlocks Create, Applied Energistics and their addons' recipes in tiers. 15 stages in total: Stone Age → Iron Age → Andesite Age → Precision Age → Alien Age → Charging Age → 256K Age → Eternal Certus → Applied Generators Age → Singularity 1M / 4M / 16M / 64M → Stella Mechanism. Locked content is hidden from JEI and cannot be crafted.
+- **Advancement tree**. 12 KubeJS advancements rooted at "Welcome to CIR", branching into three lines: "New Gem?" / "Rare Treasure" → "Stella Shine" → "Stella Rebuild"; "Medical Miracle" → "Invincible Mode" → "Concept God"; "Electricity Age" → "Charging Age". "Charging Age", "Stella Rebuild" and "Concept God" are hidden challenge advancements.
+- **Reaction chamber recipe**. Reinforced redstone dust is now produced in the AdvancedAE reaction chamber, 32 at a time, at 500K FE.
+- **Create milling recipes**. 12 dusts from AE2, ExtendedAE, AdvancedAE, AppliedFlux and Applied Generators gain a Create milling path. They were previously obtainable only through the AE2 inscriber, all with single-item inputs; milling output stays 1:1.
+- **Status effect icons**. 9 status effect item icons for advancement display.
+
+### Changed
+
+- The AE2 item list is now hardcoded to work around KubeJS string typing issues during runtime registry iteration. It must be re-exported when mod versions change.
+- Mod translations moved out of the KubeJS `assets` directory into a standalone localization resource pack. The repository no longer ships these language files.
+
+### Removed
+
+- Server-side gift code system. The feature now lives in the Create CIR Addition mod, so the KubeJS implementation is no longer needed.
 
 ## [4.0.0] - 2026-11-03
 
