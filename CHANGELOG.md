@@ -19,7 +19,7 @@
 
 ### 变更
 
-- 「伤害加成」附魔补充量子头盔与量子胸甲的加成条目
+- 「伤害加成」附魔补充针对量子头盔与量子胸甲的加成条目
 - 未至之地（Regions Unexplored）补齐 137 条简体中文词条，覆盖群系、方块、物品与配置界面
 - 若干 Create 配方微调
 
@@ -200,7 +200,7 @@
 
 ### Changed
 
-- Damage Bonus enchantment: added entries for the quantum helmet and chestplate
+- Damage Bonus enchantment: added entries aim at quantum helmet and chestplate
 - Regions Unexplored: filled in 137 missing Simplified Chinese entries covering biomes, blocks, items and the config screen
 - Minor Create recipe adjustments
 

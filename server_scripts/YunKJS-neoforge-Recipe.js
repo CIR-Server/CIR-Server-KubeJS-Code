@@ -209,13 +209,13 @@ ServerEvents.recipes((e) => {
       },
       input_items: [
         {
-          amount: 64,
+          amount: 32,
           ingredient: {
             item: 'kubejs:redstone_reinforce_gem'
           }
         },
         {
-          amount: 64,
+          amount: 32,
           ingredient: {
             item: 'kubejs:degeneration_gem'
           }
@@ -223,13 +223,13 @@ ServerEvents.recipes((e) => {
         {
           amount: 32,
           ingredient: {
-            item: 'ae2:singularity'
+            item: 'ae2:certus_quartz_dust'
           }
         },
         {
-          amount: 24,
+          amount: 8,
           ingredient: {
-            item: 'minecraft:diamond'
+            item: 'ae2:singularity'
           }
         },
         {
@@ -239,7 +239,7 @@ ServerEvents.recipes((e) => {
           }
         },
         {
-          amount: 4,
+          amount: 2,
           ingredient: {
             item: 'deeperdarker:reinforced_echo_shard'
           }
@@ -250,7 +250,7 @@ ServerEvents.recipes((e) => {
         "#t": "ae2:i",
         "id": "kubejs:eternal_certus_gem"
       }
-    })
+    }).id('kubejs:eternal_certus_gem_reaction')
     // [DW-搬入 2026-11-01] AdvancedAE 反应仓：强化石英玻璃
     e.custom({
       type: 'advanced_ae:reaction',
@@ -311,6 +311,39 @@ ServerEvents.recipes((e) => {
         "id": "kubejs:eternal_reinforced_glass"
       }
     })
+
+    // ================================================================
+    // [CIR-新增 2026-11-10] 强化红石粉 / 星辉红石粉 反应仓配方
+    //   原配方：强化粉 = Create 填充（1 红石 + 100mb → 1 个）
+    //           星辉粉 = Create 搅拌（8 红石 + 1 星辉量子宝石 → 8 个固定产出）
+    //   反应仓不吃概率，只按固定产出折算，统一放大到 32 个。
+    // ================================================================
+
+    // 强化红石粉：原 1 红石 + 100mb → 1 个，放大 32 倍
+    e.custom({
+      type: 'advanced_ae:reaction',
+      input_energy: 500000,
+      input_fluid: {
+        amount: 3200,
+        ingredient: {
+          fluid: 'kubejs:reinforce_liquid'
+        }
+      },
+      input_items: [
+        {
+          amount: 32,
+          ingredient: {
+            item: 'minecraft:redstone'
+          }
+        }
+      ],
+      output: {
+        "#": 32,
+        "#t": "ae2:i",
+        "id": "kubejs:reinforced_redstone_dust"
+      }
+    })
+
 });
 
    

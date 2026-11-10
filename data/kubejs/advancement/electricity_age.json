@@ -1,0 +1,22 @@
+{
+    "parent":  "kubejs:welcome_to_cir",
+    "display":  {
+                    "icon":  {
+                                 "id":  "createaddition:alternator"
+                             },
+                    "frame":  "task",
+                    "show_toast":  true,
+                    "announce_to_chat":  true,
+                    "title":  {
+                                  "translate":  "advancement.kubejs.electricity_age.title"
+                              },
+                    "description":  {
+                                        "translate":  "advancement.kubejs.electricity_age.description"
+                                    }
+                },
+    "criteria":  {
+                     "trigger":  {
+                                     "trigger":  "minecraft:impossible"
+                                 }
+                 }
+}

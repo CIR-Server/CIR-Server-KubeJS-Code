@@ -5,6 +5,7 @@ let $DataSource = Java.loadClass("net.minecraft.network.chat.contents.DataSource
  * @description 服务端事件相关 KubeJS 脚本
  */
 console.log('Loading KubeJS Code: "UndKJS-EntityEvent.js"');
+//生命流失 buff 分级实现模块
 EntityEvents.afterHurt(event => {
     const target = event.getEntity()
     const server = event.getServer()
@@ -68,6 +69,7 @@ EntityEvents.afterHurt(event => {
     }
 })
 // 受伤事件
+//玩家头获取
 EntityEvents.afterHurt(event => {
     const damage = event.getDamage();
     const sourc = event.getSource();
@@ -84,6 +86,7 @@ EntityEvents.afterHurt(event => {
       }
     }
   })
+  //禁止打熊猫
   EntityEvents.afterHurt(event => {
     const sourc = event.getSource();
     const target = event.getEntity();
@@ -96,6 +99,7 @@ EntityEvents.afterHurt(event => {
       }
     }
   })
+  //易伤buff实现
   EntityEvents.beforeHurt(event=>{
     /** 
         @type {$LivingEntity_}
@@ -121,25 +125,25 @@ EntityEvents.afterHurt(event => {
       }
     }
   })
-  EntityEvents.afterHurt(event=>{
-    let entity = event.entity;
-    if (entity.hasEffect("kubejs:antitoxic")){
-      if(entity.hasEffect("minecraft:wither")){
-        entity.removeEffect("minecraft:wither")
-      }else if(entity.hasEffect("minecraft:poison")){
-        entity.removeEffect("minecraft:poison")
-      }else if(entity.hasEffect("kubejs:health_lose")){
-        entity.removeEffect("kubejs:health_lose")
-      }else if(entity.hasEffect("minecraft:slowness")){
-        entity.removeEffect("minecraft:slowness")
-      }else if(entity.hasEffect("minecraft:darkness")){
-        entity.removeEffect("minecraft:darkness")
-      }else if(entity.hasEffect("minecraft:mining_fatigue")){
-        entity.removeEffect("minecraft:mining_fatigue")
-      }else if(entity.hasEffect("minecraft:blindness")){
-        entity.removeEffect("minecraft:blindness")
-      }
-    }})
+// 抗毒免疫的效果列表
+const ANTITOXIC_CLEARS = [
+    "minecraft:wither",
+    "minecraft:poison",
+    "kubejs:health_lose",
+    "minecraft:slowness",
+    "minecraft:mining_fatigue",
+    "minecraft:blindness"
+]
+
+EntityEvents.afterHurt(event => {
+    const entity = event.entity
+    if (entity.level.clientSide) return
+    if (!entity.hasEffect("kubejs:antitoxic")) return
+
+    for (const id of ANTITOXIC_CLEARS) {
+        if (entity.hasEffect(id)) entity.removeEffect(id)
+    }
+})
   
   EntityEvents.afterHurt(event => {
     const sourc = event.getSource();
@@ -164,12 +168,14 @@ EntityEvents.afterHurt(event => {
     const server = event.getServer()
     const sourc = event.getSource()
     if(player.hasEffect("kubejs:health_freeze")){
+      player.unlockAdvancement('kubejs:invincible_mode')
     if(sourc.getType()=="genericKill"){
       server.tell(Text.translate("event.kubejs.player_health_freeze.genericKill", player.username).bold().gold())
       player.removeEffect("kubejs:health_freeze")
       event.cancel()
     }
     if(damage >= player.health){ 
+      player.unlockAdvancement('kubejs:concept_god')
       player.potionEffects.add("minecraft:resistance",20*30,2)
       player.potionEffects.add("minecraft:absorption",20*30,4)
       player.removeEffect("kubejs:health_freeze")
@@ -474,6 +480,6 @@ EntityEvents.afterHurt(event => {
     if(entity.getType() == "minecraft:player"){
       entity.potionEffects.add("minecraft:resistance",20*10,1)
       entity.potionEffects.add("kubejs:antitoxic",20*20,0)
-      entity.potionEffects.add("minecraft:luck",20*60*60,1)
+      entity.potionEffects.add("minecraft:luck",20*60*10,1)
     }
   })

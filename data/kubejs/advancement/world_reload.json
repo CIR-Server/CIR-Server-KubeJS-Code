@@ -1,0 +1,22 @@
+{
+  "parent": "kubejs:redstone_plus",
+  "display": {
+    "icon": {
+      "id": "minecraft:crafting_table"
+    },
+    "title": {
+      "translate": "advancement.kubejs.world_reload.title"
+    },
+    "description": {
+      "translate": "advancement.kubejs.world_reload.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "criteria": {
+    "trigger": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

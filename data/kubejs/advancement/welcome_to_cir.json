@@ -1,0 +1,22 @@
+{
+    "display":  {
+                    "icon":  {
+                                 "id":  "kubejs:magic_time_ball_day"
+                             },
+                    "frame":  "task",
+                    "background":  "minecraft:textures/block/deepslate_tiles.png",
+                    "show_toast":  true,
+                    "announce_to_chat":  true,
+                    "title":  {
+                                  "translate":  "advancement.kubejs.welcome_to_cir.title"
+                              },
+                    "description":  {
+                                        "translate":  "advancement.kubejs.welcome_to_cir.description"
+                                    }
+                },
+    "criteria":  {
+                     "trigger":  {
+                                     "trigger":  "minecraft:impossible"
+                                 }
+                 }
+}

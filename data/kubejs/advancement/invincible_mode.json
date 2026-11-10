@@ -1,0 +1,22 @@
+{
+  "parent": "kubejs:medical_miracle",
+  "display": {
+    "icon": {
+      "id": "kubejs:effect_health_freeze"
+    },
+    "title": {
+      "translate": "advancement.kubejs.invincible_mode.title"
+    },
+    "description": {
+      "translate": "advancement.kubejs.invincible_mode.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "criteria": {
+    "trigger": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

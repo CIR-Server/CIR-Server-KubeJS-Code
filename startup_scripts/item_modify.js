@@ -33,6 +33,35 @@ ItemEvents.modification(event => {
     event.modify('ae2:cell_component_256k', item => {
       item.rarity = 'epic'
     })
+    event.modify('appflux:core_64m', item => {
+      item.rarity = 'uncommon'
+    })
+    event.modify('appflux:core_256m', item => {
+      item.rarity = 'rare'
+    })
+    // [CIR-改动 2026-11-06] Applied Generators 产能组件的高档位稀有度
+    event.modify('appgen:generating_component_64m', item => {
+      item.rarity = 'uncommon'
+    })
+    event.modify('appgen:generating_component_256m', item => {
+      item.rarity = 'rare'
+    })
+    // [CIR-改动 2026-11-06] Applied Generators 奇点发电机 1M ~ 256M 的稀有度
+    event.modify('appgen:singularity_generator_1m', item => {
+      item.rarity = 'uncommon'
+    })
+    event.modify('appgen:singularity_generator_4m', item => {
+      item.rarity = 'uncommon'
+    })
+    event.modify('appgen:singularity_generator_16m', item => {
+      item.rarity = 'rare'
+    })
+    event.modify('appgen:singularity_generator_64m', item => {
+      item.rarity = 'epic'
+    })
+    event.modify('appgen:singularity_generator_256m', item => {
+      item.rarity = 'epic'
+    })
     event.modify('kubejs:reinforce_liquid_bucket', item => {
       item.rarity = 'rare'
     })

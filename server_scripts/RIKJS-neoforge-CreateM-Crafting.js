@@ -151,4 +151,17 @@ ServerEvents.recipes(event => {
       count: 1
     }
   });
+
+  // AE2 驱动器：中间加精密构件
+  event.remove({ output: 'ae2:drive' });
+  event.shaped('ae2:drive', [
+    'ABA',
+    'CPC',
+    'ABA'
+  ], {
+    A: '#c:ingots/iron',
+    B: 'ae2:engineering_processor',
+    C: 'ae2:fluix_glass_cable',
+    P: 'create:precision_mechanism'
+  });
 });

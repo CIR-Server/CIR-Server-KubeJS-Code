@@ -1,9 +1,9 @@
 /**
- * @author bot_undefined
- * @name UndKJS-PlayerEvent
+ * @author Real_Infinistar
+ * @name RIKJS-PlayerEvent
  * @description 服务端事件相关 KubeJS 脚本
  */
-console.log('Loading KubeJS Code: "UndKJS-PlayerEvent.js"');
+console.log('Loading KubeJS Code: "RIKJS-PlayerEvent.js"');
 
 PlayerEvents.chat(event => {
   const player = event.getPlayer();
@@ -12,51 +12,17 @@ PlayerEvents.chat(event => {
   if (message.toLowerCase() == '!!clear') 
     {
       server.scheduleInTicks(4, () => {
-      if(player.hasPermissions(4)||player.hasPermissions(1)){
-        server.tell(Text.of("警告！五秒后清理全部掉落物！"))
+        server.tell(Text.translate("event.kubejs.clear").aqua())
       server.scheduleInTicks(100, () => {
-        server.runCommand('kill @e[type=item]')
-        server.tell(Text.of("已清理全部掉落物！").green())
+        server.runCommand('cir cleanup')
+        server.tell(Text.translate("event.kubejs.clear.success",player.username).green())
       })
-    }else{
-      server.tell(Text.of("你没有清理掉落物的权限").aqua())
-    }
     })
   }
 })
 // 玩家事件
-PlayerEvents.chat(event => {
-  const player = event.getPlayer();
-  const server = event.getServer();
-  const message = event.getMessage();
 
-  // 当玩家输入指定兑换码时触发
-  if (message.toLowerCase() === 'cirnewkjs30') {
-    // 初始化兑换名单（如果不存在）
-    if (!server.persistentData.KJS30List) {
-      server.persistentData.KJS30List = [];
-    }
-    
-    // 检查玩家是否已兑换过
-    if (String(server.persistentData.KJS30List).includes(player.username)) {
-      player.tell(Text.translate("event.kubejs.gift.already").red());
-      event.cancel()
-    }
-    // 添加玩家到兑换名单
-    server.persistentData.KJS30List.push(player.username);
-    
-    // 给予玩家奖励
-    player.give(Item.of('kubejs:setlla_quantum_gem', 1));  
-    player.give(Item.of('kubejs:random_blcok', 16)); 
-    player.give(Item.of('minecraft:golden_apple', 10));    // 10个金胡萝卜
-    player.potionEffects.add('minecraft:speed', 20 * 60 * 30, 1); // 30分钟速度 II
-    player.addXP(500); // 500经验
-
-    // 发送成功消息
-    player.tell(Text.translate("event.kubejs.gift.success").green());
-    event.cancel()
-  }
-});
+//燃烧buff实现
  PlayerEvents.tick(event => {
     const player = event.getPlayer();
     if(player.hasEffect("kubejs:burning")){
@@ -140,7 +106,26 @@ PlayerEvents.chat(event => {
       })
     }
   })
-  // 聊天关键词过滤与发言拦截：服务器内部使用，不随本仓库分发
+  //下述两段代码只适用于CIR Server，发布版本会移除
+  PlayerEvents.chat(event => {
+      if( event.message.includes('宗教游戏') || event.message.includes('颗粒鸡块') ||event.message.includes('女拳')||event.message.includes('郭楠')
+        || event.message.includes('傻逼吧你') || event.message.includes('勇者大人')||event.message.includes('桌饺')||event.message.includes('索嗨')
+        || event.message.includes('操你妈') || event.message.includes('nmsl') || event.message.includes('线下真实') || event.message.includes('死妈')
+        || event.message.includes('你妈死了') || event.message.includes('脑瘫') || event.message.includes('快开我盒')|| event.message.includes('散兵夫人')
+         ){
+            event.player.tell(Text.red("您发送的信息疑似包含引战信息或攻击性言论，请修改后重新发送"))
+            event.cancel()}
+  })
+  PlayerEvents.chat(event => {
+    if(event.message.includes('散兵')||event.message.includes('忌炎')||event.message.includes('刘伟')||event.message.includes('松伦')||
+    event.message.includes('仙家军')||event.message.includes('利刃')||event.message.includes('库狗')||event.message.includes('三度背叛')||
+    event.message.includes('迷你世界')||event.message.includes('米学长')||event.message.includes('米孝子')||event.message.includes('mxz')||event.message.includes('NGA')
+  ){
+      event.server.scheduleInTicks(2, () =>{
+      event.player.tell(Text.of("（仅你可见）检测到可能引发争议的游戏或其相关内容，请尽量避免讨论，以避免可能的争执。如果你并未讨论争议游戏内容，请忽略此信息").aqua())
+    })
+    }
+  })
 
   // 玩家登陆事件
   PlayerEvents.loggedIn(event=>{

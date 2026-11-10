@@ -1,0 +1,30 @@
+{
+    "parent":  "kubejs:stella_shine",
+    "display":  {
+                    "icon":  {
+                                 "id":  "kubejs:stella_mechanism"
+                             },
+                    "frame":  "challenge",
+                    "show_toast":  true,
+                    "announce_to_chat":  true,
+                    "hidden":  true,
+                    "title":  {
+                                  "translate":  "advancement.kubejs.stella_rebuild.title"
+                              },
+                    "description":  {
+                                        "translate":  "advancement.kubejs.stella_rebuild.description"
+                                    }
+                },
+    "criteria":  {
+                     "got":  {
+                                 "trigger":  "minecraft:inventory_changed",
+                                 "conditions":  {
+                                                    "items":  [
+                                                                  {
+                                                                      "items":  "kubejs:stella_mechanism"
+                                                                  }
+                                                              ]
+                                                }
+                             }
+                 }
+}

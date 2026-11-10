@@ -1,0 +1,23 @@
+{
+    "parent":  "kubejs:electricity_age",
+    "display":  {
+                    "icon":  {
+                                 "id":  "createaddition:tesla_coil"
+                             },
+                    "frame":  "challenge",
+                    "show_toast":  true,
+                    "announce_to_chat":  true,
+                    "hidden":  true,
+                    "title":  {
+                                  "translate":  "advancement.kubejs.charging_age.title"
+                              },
+                    "description":  {
+                                        "translate":  "advancement.kubejs.charging_age.description"
+                                    }
+                },
+    "criteria":  {
+                     "trigger":  {
+                                     "trigger":  "minecraft:impossible"
+                                 }
+                 }
+}

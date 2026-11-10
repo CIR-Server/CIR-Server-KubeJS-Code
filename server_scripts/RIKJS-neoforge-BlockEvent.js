@@ -280,6 +280,7 @@ BlockEvents.rightClicked("minecraft:bedrock", event => {
         event.block.set("kubejs:recipe_reloader")
         console.log(`[MCDR_warning]Recipe Reloader Placed at ${x} ${y} ${z}`)
         server.tell(Text.translate("event.kubejs.recipe_reloader_set", player.username,x,y,z).gold().bold())
+        player.unlockAdvancement('kubejs:world_reload')
       }
       else return
     })

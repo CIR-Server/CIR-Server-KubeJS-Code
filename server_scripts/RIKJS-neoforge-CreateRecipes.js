@@ -311,6 +311,32 @@ ServerEvents.recipes(event => {
     ],
     'kubejs:eternal_certus_gem'
   ).processingTime(100);
+
+  // ================================================================
+  // [CIR-新增 2026-11-10] AE2 系 / 应用通量 / 应用发电机的粉末研磨
+  //   这些粉末原本只有 ae2:inscriber（压印器）路径，输入都是单一种物品，
+  //   这里给机械动力研磨补一条平行路径，产出保持 1:1。
+  // ================================================================
+
+  // --- AE2 本体 ---
+  create.milling([Item.of('ae2:certus_quartz_dust', 1)], Ingredient.of('#c:gems/certus_quartz')).processingTime(100);
+  create.milling([Item.of('ae2:fluix_dust', 1)], Ingredient.of('#c:gems/fluix')).processingTime(100);
+  create.milling([Item.of('ae2:sky_dust', 1)], 'ae2:sky_stone_block').processingTime(100);
+  create.milling([Item.of('ae2:ender_dust', 1)], 'minecraft:ender_pearl').processingTime(100);
+
+  // --- ExtendedAE / AdvancedAE ---
+  create.milling([Item.of('extendedae:entro_dust', 1)], Ingredient.of('#c:gems/entro')).processingTime(100);
+  create.milling([Item.of('advanced_ae:quantum_infused_dust', 1)], 'advanced_ae:shattered_singularity').processingTime(100);
+
+  // --- AppliedFlux ---
+  create.milling([Item.of('appflux:diamond_dust', 1)], Ingredient.of('#c:gems/diamond')).processingTime(100);
+  create.milling([Item.of('appflux:emerald_dust', 1)], Ingredient.of('#c:gems/emerald')).processingTime(100);
+
+  // --- AppliedGenerators ---
+  create.milling([Item.of('appgen:copper_dust', 1)], 'minecraft:copper_ingot').processingTime(100);
+  create.milling([Item.of('appgen:gold_dust', 1)], 'minecraft:gold_ingot').processingTime(100);
+  create.milling([Item.of('appgen:ember_dust', 1)], 'appgen:ember_crystal').processingTime(100);
+  create.milling([Item.of('appgen:netherite_dust', 1)], 'minecraft:netherite_ingot').processingTime(100);
   // =========================
   // 搅拌 Mixing
   // =========================

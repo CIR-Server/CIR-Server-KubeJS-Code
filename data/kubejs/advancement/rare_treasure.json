@@ -1,0 +1,29 @@
+{
+    "parent":  "kubejs:welcome_to_cir",
+    "display":  {
+                    "icon":  {
+                                 "id":  "kubejs:eternal_certus_gem"
+                             },
+                    "frame":  "goal",
+                    "show_toast":  true,
+                    "announce_to_chat":  true,
+                    "title":  {
+                                  "translate":  "advancement.kubejs.rare_treasure.title"
+                              },
+                    "description":  {
+                                        "translate":  "advancement.kubejs.rare_treasure.description"
+                                    }
+                },
+    "criteria":  {
+                     "got":  {
+                                 "trigger":  "minecraft:inventory_changed",
+                                 "conditions":  {
+                                                    "items":  [
+                                                                  {
+                                                                      "items":  "kubejs:eternal_certus_gem"
+                                                                  }
+                                                              ]
+                                                }
+                             }
+                 }
+}

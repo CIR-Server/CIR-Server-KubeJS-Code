@@ -1,0 +1,50 @@
+{
+    "parent":  "kubejs:welcome_to_cir",
+    "display":  {
+                    "icon":  {
+                                 "id":  "kubejs:redstone_reinforce_gem"
+                             },
+                    "frame":  "task",
+                    "show_toast":  true,
+                    "announce_to_chat":  true,
+                    "title":  {
+                                  "translate":  "advancement.kubejs.new_gem.title"
+                              },
+                    "description":  {
+                                        "translate":  "advancement.kubejs.new_gem.description"
+                                    }
+                },
+    "criteria":  {
+                     "redstone":  {
+                                      "trigger":  "minecraft:inventory_changed",
+                                      "conditions":  {
+                                                         "items":  [
+                                                                       {
+                                                                           "items":  "kubejs:redstone_reinforce_gem"
+                                                                       }
+                                                                   ]
+                                                     }
+                                  },
+                     "degeneration":  {
+                                          "trigger":  "minecraft:inventory_changed",
+                                          "conditions":  {
+                                                             "items":  [
+                                                                           {
+                                                                               "items":  "kubejs:degeneration_gem"
+                                                                           }
+                                                                       ]
+                                                         }
+                                      }
+                 },
+    "requirements":  [
+                         [
+                             "redstone",
+                             "degeneration"
+                         ]
+                     ],
+    "rewards":  [
+                    {
+                        "experience":  500
+                    }
+                ]
+}

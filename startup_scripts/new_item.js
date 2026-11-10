@@ -132,21 +132,26 @@ StartupEvents.registry('item', event => {
     event.create('kubejs:redstone_reinforce_gem')
     .displayName('Redstone Reinforce Gem')
     .tooltip(Text.translate("tooltip.kubejs.redstone_reinforce_gem"))
-    .rarity("rare")
+    .rarity("uncommon")
+    .tag('c:gems')
     // 物品注册-退化宝石
     event.create('kubejs:degeneration_gem')
     .displayName('Degeneration Gem')
     .tooltip(Text.translate("tooltip.kubejs.degeneration_gem").red())
-    .rarity("rare")
+    .rarity("uncommon")
+    .tag('c:gems')
     // 物品注册-永恒赛特斯宝石
     event.create('kubejs:eternal_certus_gem')
     .displayName('Eternal Certus Gem')
     .tooltip(Text.translate("tooltip.kubejs.eternal_certus_gem"))
     .rarity("epic")
+    .tag('c:gems')
     // 物品注册-§9星辉量子宝石
     event.create('kubejs:stella_quantum_gem')
     .displayName('Stella Quantum Gem')
+    .rarity("epic")
     .tooltip(Text.translate("tooltip.kubejs.stella_quantum_gem"))
+    .tag('c:gems')
     // 物品注册-星辉红石粉
     event.create('kubejs:stella_redstone_dust')
     .displayName('Stella Redstone Dust')
@@ -160,7 +165,7 @@ StartupEvents.registry('item', event => {
     event.create('kubejs:eternal_certus_dust')
     .displayName('Eternal Certus Dust')
     .tooltip(Text.translate("tooltip.kubejs.eternal_certus_dust"))
-    .rarity("epic")
+    .rarity("rare")
     .maxStackSize(16)
     .tag('kubejs:dusts')
     .tag('c:dusts')
@@ -169,7 +174,7 @@ StartupEvents.registry('item', event => {
     event.create('kubejs:reinforced_redstone_dust')
     .displayName('Reinforced Redstone Dust')
     .tooltip(Text.translate("tooltip.kubejs.reinforced_redstone_dust.1"))
-    .rarity("rare")
+    .rarity("uncommon")
     .maxStackSize(16)
     .tag('kubejs:dusts')
     .tag('c:dusts')
@@ -180,6 +185,24 @@ StartupEvents.registry('item', event => {
     .tooltip(Text.translate("tooltip.kubejs.ancient_debris_dust"))
     .tag('c:dusts/ancient_debris')
     .tag('c:dusts')
+        // [CIR-新增 2026-11-02] 星辉构件：电路切片器的进阶材料
+    // 可堆叠（默认 64），稀有度 = 稀有
+    // 序列装配产物，见 server_scripts/stella_mechanism_recipes.js
+    // 名称走语言文件：item.kubejs.stella_mechanism（en_us / zh_cn / zh_tw 均已补）
+    // 物品注册-星辉构件
+    event.create('kubejs:stella_mechanism')
+    .texture("kubejs:item/stella_mechanism")
+    .rarity("epic")
+
+    // [CIR-新增 2026-11-02] 星辉构件的序列装配半成品
+    // 第二个参数 'create:sequenced_assembly' 指定 KubeJS Create 提供的物品类型，
+    // 对应 Create 的 SequencedAssemblyItem —— 自带 stacksTo(1) 和进度条，
+    // 不加这个就只是个普通物品，序列装配机上不会显示进度。
+    // 名称走语言文件：item.kubejs.incomplete_stella_mechanism
+    // 物品注册-星辉构件（半成品）
+    event.create('kubejs:incomplete_stella_mechanism', 'create:sequenced_assembly')
+    .texture("kubejs:item/incomplete_stella_mechanism")
+    .rarity("rare")
     // 物品注册-世界之力-天气球
     event.create("kubejs:magic_weather_ball_rain")
     .tooltip("§b雨 Rain")
@@ -311,22 +334,60 @@ StartupEvents.registry('item', event => {
     .rarity("epic")
     .maxStackSize(16)
 
-    // [CIR-新增 2026-11-02] 星辉构件：电路切片器的进阶材料
-    // 可堆叠（默认 64），稀有度 = 稀有
-    // 序列装配产物，见 server_scripts/stella_mechanism_recipes.js
-    // 名称走语言文件：item.kubejs.stella_mechanism（en_us / zh_cn / zh_tw 均已补）
-    // 物品注册-星辉构件
-    event.create('kubejs:stella_mechanism')
-    .texture("kubejs:item/stella_mechanism")
-    .rarity("rare")
 
-    // [CIR-新增 2026-11-02] 星辉构件的序列装配半成品
-    // 第二个参数 'create:sequenced_assembly' 指定 KubeJS Create 提供的物品类型，
-    // 对应 Create 的 SequencedAssemblyItem —— 自带 stacksTo(1) 和进度条，
-    // 不加这个就只是个普通物品，序列装配机上不会显示进度。
-    // 名称走语言文件：item.kubejs.incomplete_stella_mechanism
-    // 物品注册-星辉构件（半成品）
-    event.create('kubejs:incomplete_stella_mechanism', 'create:sequenced_assembly')
-    .texture("kubejs:item/incomplete_stella_mechanism")
+    // 效果图标物品（隐藏，不进创造栏，仅作为进度图标）
+    event.create('kubejs:effect_vulnerable')
+    .displayName('Effect Icon Vulnerable')
+    .texture('kubejs:item/effect_vulnerable')
+
+    event.create('kubejs:effect_golem')
+    .displayName('Effect Icon Golem')
+    .texture('kubejs:item/effect_golem')
+
+    event.create('kubejs:effect_antitoxic')
+    .displayName('Effect Icon Antitoxic')
+    .texture('kubejs:item/effect_antitoxic')
+
+    event.create('kubejs:effect_burning')
+    .displayName('Effect Icon Burning')
+    .texture('kubejs:item/effect_burning')
+
+    event.create('kubejs:effect_health_freeze')
+    .displayName('Effect Icon Health Freeze')
+    .texture('kubejs:item/effect_health_freeze')
+
+    event.create('kubejs:effect_health_lose')
+    .displayName('Effect Icon Health Lose')
+    .texture('kubejs:item/effect_health_lose')
+
+    event.create('kubejs:effect_anti_radiation')
+    .displayName('Effect Icon Anti Radiation')
+    .texture('kubejs:item/effect_anti_radiation')
+
+    event.create('kubejs:effect_bombegranate_support')
+    .displayName('Effect Icon Bombegranate Support')
+    .texture('kubejs:item/effect_bombegranate_support')
+
+    event.create('kubejs:effect_radiation')
+    .displayName('Effect Icon Radiation')
+    .texture('kubejs:item/effect_radiation')
+
   })
   
+
+// ================================================================
+// 效果图标物品不进创造栏
+//   KubeJS 7 会把所有 kubejs 物品自动塞进 kubejs:tab，
+//   要在 modifyCreativeTab 里手动摘掉。
+// ================================================================
+StartupEvents.modifyCreativeTab('kubejs:tab', event => {
+  event.remove('kubejs:effect_vulnerable')
+  event.remove('kubejs:effect_golem')
+  event.remove('kubejs:effect_antitoxic')
+  event.remove('kubejs:effect_burning')
+  event.remove('kubejs:effect_health_freeze')
+  event.remove('kubejs:effect_health_lose')
+  event.remove('kubejs:effect_anti_radiation')
+  event.remove('kubejs:effect_bombegranate_support')
+  event.remove('kubejs:effect_radiation')
+})

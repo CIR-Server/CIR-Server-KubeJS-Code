@@ -13,7 +13,6 @@ ServerEvents.tags('item', event => {
   event.add('kubejs:stripped_blocks', /stripped/)
   event.add('kubejs:plank_blocks', /planks/)
   event.add('kubejs:precious_gem',["kubejs:eternal_certus_gem","kubejs:stella_quantum_gem"] )
-  event.add('c:gems',["kubejs:eternal_certus_gem","kubejs:stella_quantum_gem","kubejs:redstone_reinforce_gem","kubejs:degeneration_gem"] )
   event.add('kubejs:include_eternal', /eternal/)
   event.add('kubejs:include_stella', /stella/)
   event.add('kubejs:reinforced_block',["minecraft:reinforced_deepslate","kubejs:raw_reinforced_deepslate"] )

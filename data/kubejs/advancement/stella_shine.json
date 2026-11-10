@@ -1,0 +1,29 @@
+{
+    "parent":  "kubejs:rare_treasure",
+    "display":  {
+                    "icon":  {
+                                 "id":  "kubejs:stella_quantum_gem"
+                             },
+                    "frame":  "challenge",
+                    "show_toast":  true,
+                    "announce_to_chat":  true,
+                    "title":  {
+                                  "translate":  "advancement.kubejs.stella_shine.title"
+                              },
+                    "description":  {
+                                        "translate":  "advancement.kubejs.stella_shine.description"
+                                    }
+                },
+    "criteria":  {
+                     "got":  {
+                                 "trigger":  "minecraft:inventory_changed",
+                                 "conditions":  {
+                                                    "items":  [
+                                                                  {
+                                                                      "items":  "kubejs:stella_quantum_gem"
+                                                                  }
+                                                              ]
+                                                }
+                             }
+                 }
+}
