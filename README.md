@@ -29,6 +29,7 @@ KubeJS scripts running on the CIR Minecraft server — recipes, custom content, 
 
 -删掉的原版配方统一登记在移除清单里，方便追溯。
 
+-神话（Apotheosis）系宝石重做了整套加工链路：宝石可按品阶研磨成宝石粉，开裂及以上品质改用宝石粉作为序列组装的输入，跨品质升阶则按宝石种类分别配置用料。
 ### 自定义内容
 
 - **物品**：六十余个，包括 256K 存储组件链、星辉量子宝石、永恒赛特斯宝石、红石强化石、人造钻石链，以及四组右键即可使用的强力功能球
@@ -40,10 +41,21 @@ KubeJS scripts running on the CIR Minecraft server — recipes, custom content, 
 ### 新增材料
 
 **星辉量子宝石** `kubejs:stella_quantum_gem`：只能在宝箱中获取，无法合成，其加工产物**星辉红石粉** `kubejs:stella_redstone_dust` 可以用于极高级的合成用途如量子套装与AE2无线传输系统等，也可用于制造**星辉构件** `kubejs:stella_mechanism` 制造电路压印机（模组：Extended AE）将电路板的生产由机械动力的序列组装恢复为AE2的直接生产。
-**永恒赛特斯宝石** `kubejs:eternal_certus_gem` ：只能在宝箱中获取或使用多种珍稀材料由反应仓（模组：Extended AE）进行合成，可用于256K存储组件等AE2高阶芯片的合成。
+**永恒赛特斯宝石** `kubejs:eternal_certus_gem` ：宝箱掉落，或由反应仓（模组：Extended AE）以免于凋灵破坏的合成路线制得——恩特罗注入锭、回响碎片、强化红石宝石与退化宝石等为料，另有宝石粉路线可替代。用于256K存储组件等AE2高阶芯片。
 **红石强化石** `kubejs:redstone_reinforce_gem` ：可以在下界通过机械动力：矿石开凿（Create: Ore Excavation）模组开采矿脉获得，其加工产物**强化液体** `kubejs:reinforce_liquid` 可用于制备**强化红石粉** `kubejs:reinforced_redstone_dust` 用于多种合成用途，是启动AE2中后期发展的必须品。
 **退化宝石** `kubejs:degeneration_gem` ：可以在下界通过机械动力：矿石开凿（Create: Ore Excavation）模组开采矿脉获得，右键**强化过的方块** `*:reinforced_*` 使用，使其附近所有同类方块变化为未强化状态，可用于处理强化深板岩（前文已介绍，在本包中可被制造）放置失误等情况。
 **远古残骸粉末** `kubejs:ancient_debris_dust` ：由远古残骸经过**粉碎**`create.crushing()`获得，粉碎时有概率额外获得，可用于下界合金的增产。
+
+### 矿脉适配
+
+为机械动力：矿石开凿补充四条原创矿脉：
+
+| 矿脉 | 群系 | 产物 |
+|---|---|---|
+| 粗铝 | 末地外岛 | 粗铝矿（对接 NEO ECO） |
+| 粗钨 | 末地外岛 | 粗钨矿（对接 NEO ECO） |
+| 宝石粉 | 暮色森林 | 宝石粉 / 灰烬各半 |
+| 龙息 | 末地外岛 | 龙息流体（Create: Dragons Plus） |
 
 ### 附魔与掉落表
 
@@ -113,7 +125,7 @@ KubeJS scripts running on the CIR Minecraft server — recipes, custom content, 
 
 ## 版本
 
-当前：**4.0.0**，详见 [CHANGELOG.md](CHANGELOG.md)。
+当前：**4.1**，详见 [CHANGELOG.md](CHANGELOG.md)。
 
 ## 许可
 
@@ -135,6 +147,8 @@ KubeJS scripts running on the CIR Minecraft server — recipes, custom content, 
 
 - Every removed vanilla recipe is recorded in the removal list, so the originals can be traced.
 
+- Apotheosis gems were given a reworked processing chain: gems can be milled into gem dust, chipped-and-above gems use gem dust as the sequenced assembly input, and tier upgrades are configured per gem type.
+
 ### Custom content
 
 - **Items**: sixty-odd, including the 256K cell component chain, the stella quantum gem, the eternal certus gem, the redstone reinforce gem, the synthetic diamond chain, and four sets of right-click power orbs
@@ -147,13 +161,24 @@ KubeJS scripts running on the CIR Minecraft server — recipes, custom content, 
 
 **Stella Quantum Gem** `kubejs:stella_quantum_gem` — obtainable only from loot chests, never crafted. Its processed form, **Stella Redstone Dust** `kubejs:stella_redstone_dust`, feeds very high-end recipes such as the quantum armour set and AE2 wireless transmission, and is also used to make the **Stella Mechanism** `kubejs:stella_mechanism` that the circuit imprinter (Extended AE) needs to move circuit board production from Create's sequenced assembly back to AE2's direct processing.
 
-**Eternal Certus Gem** `kubejs:eternal_certus_gem` — obtained from loot chests, or crafted from a mix of rare materials in the Reaction Chamber (Extended AE). Used in AE2's high-tier components such as the 256K cell.
+**Eternal Certus Gem** `kubejs:eternal_certus_gem` — obtained from loot chests, or crafted in the Reaction Chamber (Extended AE) from Entro Infused Ingots, echo shards, the redstone reinforce gem and the degeneration gem alike. Used in AE2's high-tier components such as the 256K cell.
 
 **Redstone Reinforce Gem** `kubejs:redstone_reinforce_gem` — mined from ore veins in the Nether through Create: Ore Excavation. Its processed form, **Reinforce Liquid** `kubejs:reinforce_liquid`, is used to prepare **Reinforced Redstone Dust** `kubejs:reinforced_redstone_dust`, which feeds a range of recipes and is required to get AE2's mid-to-late game moving.
 
 **Degeneration Gem** `kubejs:degeneration_gem` — mined from ore veins in the Nether through Create: Ore Excavation. Right-click a **reinforced block** `*:reinforced_*` with it and every matching block nearby reverts to its unreinforced state. Useful when a Reinforced Deepslate (craftable in this pack, as noted above) has been placed in the wrong spot.
 
 **Ancient Debris Dust** `kubejs:ancient_debris_dust` — produced by **crushing** ancient debris with `create.crushing()`, with a chance of bonus output. Used to stretch netherite production.
+
+### Ore veins
+
+Four original veins were added for Create: Ore Excavation:
+
+| Vein | Biome | Output |
+|---|---|---|
+| Raw aluminium | End outer islands | Raw aluminium ore (NEO ECO) |
+| Raw tungsten | End outer islands | Raw tungsten ore (NEO ECO) |
+| Gem dust | Twilight Forest | Gem dust / ash, half each |
+| Dragon breath | End outer islands | Dragon breath fluid (Create: Dragons Plus) |
 
 ### Enchantments and loot tables
 
@@ -222,7 +247,7 @@ The following mods are referenced directly by recipes, items or data in these sc
 
 ## Version
 
-Current: **4.0.0** — see [CHANGELOG.md](CHANGELOG.md).
+Current: **4.1** — see [CHANGELOG.md](CHANGELOG.md).
 
 ## License
 

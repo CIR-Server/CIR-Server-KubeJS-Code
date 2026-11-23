@@ -1,0 +1,5 @@
+{
+  "attribute.name.combat_roll.count.desc": "额外可连续翻滚的次数。",
+  "attribute.name.combat_roll.distance.desc": "单次翻滚移动的距离，单位为方块。",
+  "attribute.name.combat_roll.recharge.desc": "两次翻滚之间的恢复时间，单位为秒。"
+}

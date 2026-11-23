@@ -1,7 +1,6 @@
-{
+﻿{
     "values":  [
                    "kubejs:ancient_debris_dust",
-                   "kubejs:antitoxic",
                    "kubejs:damage_resistant_capsule",
                    "kubejs:degeneration_gem",
                    "kubejs:duel_invite",
@@ -10,7 +9,6 @@
                    "kubejs:firstmade_cell_component_256k",
                    "kubejs:fried_chinese_dumpling",
                    "kubejs:guard_recruitment_order",
-                   "kubejs:health_freeze",
                    "kubejs:incomplete_budding_amethyst",
                    "kubejs:incomplete_cell_component_256k",
                    "kubejs:incomplete_eternal_reinforced_glass",

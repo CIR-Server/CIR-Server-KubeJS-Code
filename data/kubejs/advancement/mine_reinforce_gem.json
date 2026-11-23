@@ -1,0 +1,38 @@
+{
+  "parent": "kubejs:new_gem",
+  "display": {
+    "icon": {
+      "id": "kubejs:sculk_stone_reinforce_gem_ore"
+    },
+    "title": {
+      "translate": "advancement.kubejs.mine_reinforce_gem.title"
+    },
+    "description": {
+      "translate": "advancement.kubejs.mine_reinforce_gem.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "criteria": {
+    "mined_ore": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": {
+          "type_specific": {
+            "type": "minecraft:player",
+            "stats": [
+              {
+                "type": "minecraft:mined",
+                "stat": "kubejs:sculk_stone_reinforce_gem_ore",
+                "value": {
+                  "min": 1
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}

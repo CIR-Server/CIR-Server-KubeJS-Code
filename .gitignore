@@ -20,3 +20,7 @@ config/probe-settings.json
 **/jsconfig.json
 .probe/
 *.d.ts
+
+# 科技树脚本不随仓库发布
+server_scripts/DS-CIR-TechTree.js
+server_scripts/DS-CreativeAutoStage.js

@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "kubejs:xp_looting",
+    "kubejs:damage_bonus",
+    "kubejs:health_lose",
+    "kubejs:void_rescue"
+  ]
+}

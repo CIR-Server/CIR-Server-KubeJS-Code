@@ -1,0 +1,17 @@
+{
+  "processors": [
+    {
+      "processor_type": "apotheosis:item_frame_gems",
+      "purities": [
+        "cracked",
+        "chipped"
+      ]
+    }
+  ],
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "apotheosis"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 // [CIR-进度根 2026-11-09] 只负责发根进度 kubejs:welcome_to_cir
 //
-// 根进度用 minecraft:impossible 触发器，只能靠命令发。
+// 根进度用 minecraft:impossible 触发器，由脚本在未完成时发放。
 // 用 KubeJS 的 PlayerEvents.inventoryChanged 事件，物品进背包时触发一次，
 // 不需要轮询。
 //
@@ -13,5 +13,6 @@ PlayerEvents.inventoryChanged(event => {
   if (!String(item.id).startsWith('kubejs:')) return
 
   const player = event.player
-  player.server.runCommandSilent('advancement grant ' + player.username + ' only kubejs:welcome_to_cir')
+  if (player.isAdvancementDone('kubejs:welcome_to_cir')) return
+  player.unlockAdvancement('kubejs:welcome_to_cir')
 })

@@ -1,0 +1,15 @@
+{
+  "type": "createoreexcavation:drilling",
+  "drill": {
+    "tag": "createoreexcavation:drills"
+  },
+  "output": [
+    {
+      "id": "neoecoae:raw_tungsten_ore"
+    }
+  ],
+  "priority": 0,
+  "stress": 512,
+  "ticks": 600,
+  "veinId": "createoreexcavation:ore_vein_type/raw_tungsten"
+}

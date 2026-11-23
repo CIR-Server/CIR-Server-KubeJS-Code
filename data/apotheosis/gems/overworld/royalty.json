@@ -1,0 +1,445 @@
+{
+  "type": "apotheosis:gem",
+  "constraints": {
+    "dimensions": [
+      "minecraft:overworld"
+    ]
+  },
+  "min_purity": "flawed",
+  "unique": true,
+  "weights": {
+    "haven": {
+      "weight": 0,
+      "quality": 0.0
+    },
+    "frontier": {
+      "weight": 0,
+      "quality": 0.0
+    },
+    "ascent": {
+      "weight": 0,
+      "quality": 0.0
+    },
+    "summit": {
+      "weight": 0,
+      "quality": 0.0
+    },
+    "pinnacle": {
+      "weight": 0,
+      "quality": 0.0
+    }
+  },
+  "bonuses": [
+    {
+      "type": "apotheosis:multi_attribute",
+      "desc": "bonus.apotheosis:multi_attr.desc.and",
+      "gem_class": "apotheosis:helmet",
+      "modifiers": [
+        {
+          "attribute": "minecraft:generic.max_health",
+          "operation": "add_multiplied_total",
+          "values": {
+            "flawed": 0.05,
+            "normal": 0.075,
+            "flawless": 0.1,
+            "perfect": 0.15
+          }
+        },
+        {
+          "attribute": "minecraft:generic.knockback_resistance",
+          "operation": "add_multiplied_total",
+          "values": {
+            "flawed": 0.05,
+            "normal": 0.075,
+            "flawless": 0.1,
+            "perfect": 0.15
+          }
+        },
+        {
+          "attribute": "minecraft:generic.movement_speed",
+          "operation": "add_multiplied_total",
+          "values": {
+            "flawed": 0.05,
+            "normal": 0.075,
+            "flawless": 0.1,
+            "perfect": 0.15
+          }
+        },
+        {
+          "attribute": "minecraft:generic.attack_damage",
+          "operation": "add_multiplied_total",
+          "values": {
+            "flawed": 0.05,
+            "normal": 0.075,
+            "flawless": 0.1,
+            "perfect": 0.15
+          }
+        },
+        {
+          "attribute": "minecraft:generic.attack_knockback",
+          "operation": "add_multiplied_total",
+          "values": {
+            "flawed": 0.05,
+            "normal": 0.075,
+            "flawless": 0.1,
+            "perfect": 0.15
+          }
+        },
+        {
+          "attribute": "minecraft:generic.attack_speed",
+          "operation": "add_multiplied_total",
+          "values": {
+            "flawed": 0.05,
+            "normal": 0.075,
+            "flawless": 0.1,
+            "perfect": 0.15
+          }
+        },
+        {
+          "attribute": "minecraft:generic.armor",
+          "operation": "add_multiplied_total",
+          "values": {
+            "flawed": 0.05,
+            "normal": 0.075,
+            "flawless": 0.1,
+            "perfect": 0.15
+          }
+        },
+        {
+          "attribute": "minecraft:generic.armor_toughness",
+          "operation": "add_multiplied_total",
+          "values": {
+            "flawed": 0.05,
+            "normal": 0.075,
+            "flawless": 0.1,
+            "perfect": 0.15
+          }
+        },
+        {
+          "attribute": "minecraft:generic.luck",
+          "operation": "add_multiplied_total",
+          "values": {
+            "flawed": 0.05,
+            "normal": 0.075,
+            "flawless": 0.1,
+            "perfect": 0.15
+          }
+        },
+        {
+          "attribute": "minecraft:generic.step_height",
+          "operation": "add_multiplied_total",
+          "values": {
+            "flawed": 0.05,
+            "normal": 0.075,
+            "flawless": 0.1,
+            "perfect": 0.15
+          }
+        },
+        {
+          "attribute": "minecraft:player.block_interaction_range",
+          "operation": "add_multiplied_total",
+          "values": {
+            "flawed": 0.05,
+            "normal": 0.075,
+            "flawless": 0.1,
+            "perfect": 0.15
+          }
+        },
+        {
+          "attribute": "minecraft:player.entity_interaction_range",
+          "operation": "add_multiplied_total",
+          "values": {
+            "flawed": 0.05,
+            "normal": 0.075,
+            "flawless": 0.1,
+            "perfect": 0.15
+          }
+        },
+        {
+          "attribute": "apothic_attributes:armor_pierce",
+          "operation": "add_multiplied_total",
+          "values": {
+            "flawed": 0.05,
+            "normal": 0.075,
+            "flawless": 0.1,
+            "perfect": 0.15
+          }
+        },
+        {
+          "attribute": "apothic_attributes:armor_shred",
+          "operation": "add_multiplied_total",
+          "values": {
+            "flawed": 0.05,
+            "normal": 0.075,
+            "flawless": 0.1,
+            "perfect": 0.15
+          }
+        },
+        {
+          "attribute": "apothic_attributes:arrow_damage",
+          "operation": "add_multiplied_total",
+          "values": {
+            "flawed": 0.05,
+            "normal": 0.075,
+            "flawless": 0.1,
+            "perfect": 0.15
+          }
+        },
+        {
+          "attribute": "apothic_attributes:arrow_velocity",
+          "operation": "add_multiplied_total",
+          "values": {
+            "flawed": 0.05,
+            "normal": 0.075,
+            "flawless": 0.1,
+            "perfect": 0.15
+          }
+        },
+        {
+          "attribute": "apothic_attributes:cold_damage",
+          "operation": "add_multiplied_total",
+          "values": {
+            "flawed": 0.05,
+            "normal": 0.075,
+            "flawless": 0.1,
+            "perfect": 0.15
+          }
+        },
+        {
+          "attribute": "apothic_attributes:crit_chance",
+          "operation": "add_multiplied_total",
+          "values": {
+            "flawed": 0.05,
+            "normal": 0.075,
+            "flawless": 0.1,
+            "perfect": 0.15
+          }
+        },
+        {
+          "attribute": "apothic_attributes:crit_damage",
+          "operation": "add_multiplied_total",
+          "values": {
+            "flawed": 0.05,
+            "normal": 0.075,
+            "flawless": 0.1,
+            "perfect": 0.15
+          }
+        },
+        {
+          "attribute": "apothic_attributes:current_hp_damage",
+          "operation": "add_multiplied_total",
+          "values": {
+            "flawed": 0.05,
+            "normal": 0.075,
+            "flawless": 0.1,
+            "perfect": 0.15
+          }
+        },
+        {
+          "attribute": "apothic_attributes:dodge_chance",
+          "operation": "add_multiplied_total",
+          "values": {
+            "flawed": 0.05,
+            "normal": 0.075,
+            "flawless": 0.1,
+            "perfect": 0.15
+          }
+        },
+        {
+          "attribute": "apothic_attributes:experience_gained",
+          "operation": "add_multiplied_total",
+          "values": {
+            "flawed": 0.05,
+            "normal": 0.075,
+            "flawless": 0.1,
+            "perfect": 0.15
+          }
+        },
+        {
+          "attribute": "apothic_attributes:fire_damage",
+          "operation": "add_multiplied_total",
+          "values": {
+            "flawed": 0.05,
+            "normal": 0.075,
+            "flawless": 0.1,
+            "perfect": 0.15
+          }
+        },
+        {
+          "attribute": "apothic_attributes:ghost_health",
+          "operation": "add_multiplied_total",
+          "values": {
+            "flawed": 0.05,
+            "normal": 0.075,
+            "flawless": 0.1,
+            "perfect": 0.15
+          }
+        },
+        {
+          "attribute": "apothic_attributes:healing_received",
+          "operation": "add_multiplied_total",
+          "values": {
+            "flawed": 0.05,
+            "normal": 0.075,
+            "flawless": 0.1,
+            "perfect": 0.15
+          }
+        },
+        {
+          "attribute": "apothic_attributes:life_steal",
+          "operation": "add_multiplied_total",
+          "values": {
+            "flawed": 0.05,
+            "normal": 0.075,
+            "flawless": 0.1,
+            "perfect": 0.15
+          }
+        },
+        {
+          "attribute": "apothic_attributes:mining_speed",
+          "operation": "add_multiplied_total",
+          "values": {
+            "flawed": 0.05,
+            "normal": 0.075,
+            "flawless": 0.1,
+            "perfect": 0.15
+          }
+        },
+        {
+          "attribute": "apothic_attributes:overheal",
+          "operation": "add_multiplied_total",
+          "values": {
+            "flawed": 0.05,
+            "normal": 0.075,
+            "flawless": 0.1,
+            "perfect": 0.15
+          }
+        },
+        {
+          "attribute": "apothic_attributes:prot_pierce",
+          "operation": "add_multiplied_total",
+          "values": {
+            "flawed": 0.05,
+            "normal": 0.075,
+            "flawless": 0.1,
+            "perfect": 0.15
+          }
+        },
+        {
+          "attribute": "apothic_attributes:prot_shred",
+          "operation": "add_multiplied_total",
+          "values": {
+            "flawed": 0.05,
+            "normal": 0.075,
+            "flawless": 0.1,
+            "perfect": 0.15
+          }
+        },
+        {
+          "attribute": "neoforge:swim_speed",
+          "operation": "add_multiplied_total",
+          "values": {
+            "flawed": 0.05,
+            "normal": 0.075,
+            "flawless": 0.1,
+            "perfect": 0.15
+          }
+        }
+      ]
+    },
+    {
+      "type": "apotheosis:drop_transform",
+      "conditions": [
+        {
+          "condition": "apotheosis:matches_block",
+          "valid_blocks": "#c:ores/copper"
+        }
+      ],
+      "desc": "gem.apotheosis:overworld/royalty.bonus.pickaxe",
+      "gem_class": "apotheosis:breaker",
+      "inputs": {
+        "tag": "c:raw_materials/copper"
+      },
+      "output": {
+        "count": 1,
+        "id": "minecraft:raw_gold"
+      },
+      "values": {
+        "flawed": 0.15,
+        "normal": 0.2,
+        "flawless": 0.25,
+        "perfect": 0.4
+      }
+    },
+    {
+      "type": "apotheosis:multi_attribute",
+      "desc": "bonus.apotheosis:multi_attr.desc.and",
+      "gem_class": "apotheosis:bow",
+      "modifiers": [
+        {
+          "attribute": "apothic_attributes:prot_shred",
+          "operation": "add_value",
+          "values": {
+            "flawed": 0.25,
+            "normal": 0.3,
+            "flawless": 0.35,
+            "perfect": 0.4
+          }
+        },
+        {
+          "attribute": "apothic_attributes:draw_speed",
+          "operation": "add_multiplied_total",
+          "values": {
+            "flawed": -0.35,
+            "normal": -0.45,
+            "flawless": -0.55,
+            "perfect": -0.65
+          }
+        }
+      ]
+    },
+    {
+      "type": "apotheosis:multi_attribute",
+      "desc": "bonus.apotheosis:multi_attr.desc.and_but",
+      "gem_class": "apotheosis:shield",
+      "modifiers": [
+        {
+          "attribute": "minecraft:generic.armor",
+          "operation": "add_multiplied_base",
+          "values": {
+            "flawed": 0.15,
+            "normal": 0.25,
+            "flawless": 0.35,
+            "perfect": 0.5
+          }
+        },
+        {
+          "attribute": "minecraft:generic.armor_toughness",
+          "operation": "add_multiplied_base",
+          "values": {
+            "flawed": 0.075,
+            "normal": 0.125,
+            "flawless": 0.225,
+            "perfect": 0.3
+          }
+        },
+        {
+          "attribute": "minecraft:generic.movement_speed",
+          "operation": "add_multiplied_total",
+          "values": {
+            "flawed": -0.25,
+            "normal": -0.3,
+            "flawless": -0.35,
+            "perfect": -0.4
+          }
+        }
+      ]
+    }
+  ],
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "apotheosis"
+    }
+  ]
+}

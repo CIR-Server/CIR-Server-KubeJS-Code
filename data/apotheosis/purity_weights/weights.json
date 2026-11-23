@@ -1,0 +1,141 @@
+{
+  "type": "apotheosis:purity_weights",
+  "weights": {
+    "haven": {
+      "cracked": {
+        "quality": 0.0,
+        "weight": 7000
+      },
+      "chipped": {
+        "quality": 0.0,
+        "weight": 3000
+      },
+      "flawed": {
+        "quality": 0.0,
+        "weight": 0
+      },
+      "normal": {
+        "quality": 0.0,
+        "weight": 0
+      },
+      "flawless": {
+        "quality": 0.0,
+        "weight": 0
+      },
+      "perfect": {
+        "quality": 0.0,
+        "weight": 0
+      }
+    },
+    "frontier": {
+      "cracked": {
+        "quality": 0.0,
+        "weight": 6000
+      },
+      "chipped": {
+        "quality": 0.0,
+        "weight": 3900
+      },
+      "flawed": {
+        "quality": 0.0,
+        "weight": 100
+      },
+      "normal": {
+        "quality": 0.0,
+        "weight": 0
+      },
+      "flawless": {
+        "quality": 0.0,
+        "weight": 0
+      },
+      "perfect": {
+        "quality": 0.0,
+        "weight": 0
+      }
+    },
+    "ascent": {
+      "cracked": {
+        "quality": 0.0,
+        "weight": 5000
+      },
+      "chipped": {
+        "quality": 0.0,
+        "weight": 4600
+      },
+      "flawed": {
+        "quality": 0.0,
+        "weight": 400
+      },
+      "normal": {
+        "quality": 0.0,
+        "weight": 0
+      },
+      "flawless": {
+        "quality": 0.0,
+        "weight": 0
+      },
+      "perfect": {
+        "quality": 0.0,
+        "weight": 0
+      }
+    },
+    "summit": {
+      "cracked": {
+        "quality": 0.0,
+        "weight": 4600
+      },
+      "chipped": {
+        "quality": 0.0,
+        "weight": 4550
+      },
+      "flawed": {
+        "quality": 0.0,
+        "weight": 800
+      },
+      "normal": {
+        "quality": 0.0,
+        "weight": 50
+      },
+      "flawless": {
+        "quality": 0.0,
+        "weight": 0
+      },
+      "perfect": {
+        "quality": 0.0,
+        "weight": 0
+      }
+    },
+    "pinnacle": {
+      "cracked": {
+        "quality": 0.0,
+        "weight": 4200
+      },
+      "chipped": {
+        "quality": 0.0,
+        "weight": 4194
+      },
+      "flawed": {
+        "quality": 0.0,
+        "weight": 1500
+      },
+      "normal": {
+        "quality": 0.0,
+        "weight": 100
+      },
+      "flawless": {
+        "quality": 0.0,
+        "weight": 6
+      },
+      "perfect": {
+        "quality": 0.0,
+        "weight": 0
+      }
+    }
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "apotheosis"
+    }
+  ]
+}

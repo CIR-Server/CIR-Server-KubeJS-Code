@@ -1,0 +1,89 @@
+{
+  "type": "apotheosis:gems",
+  "conditions": [],
+  "entries": [
+    {
+      "chance": 0.25,
+      "pattern": {
+        "domain": "minecraft",
+        "path_regex": "chests.*"
+      },
+      "purities": [
+        "cracked",
+        "chipped"
+      ],
+      "gems": [
+        "apotheosis:core/ballast",
+        "apotheosis:core/brawlers",
+        "apotheosis:core/breach",
+        "apotheosis:core/combatant",
+        "apotheosis:core/guardian",
+        "apotheosis:core/lightning",
+        "apotheosis:core/lunar",
+        "apotheosis:core/samurai",
+        "apotheosis:core/slipstream",
+        "apotheosis:core/solar",
+        "apotheosis:core/splendor",
+        "apotheosis:core/tyrannical",
+        "apotheosis:core/warlord"
+      ]
+    },
+    {
+      "chance": 0.2,
+      "pattern": {
+        "path_regex": "chests.*"
+      },
+      "purities": [
+        "cracked",
+        "chipped"
+      ],
+      "gems": [
+        "apotheosis:core/ballast",
+        "apotheosis:core/brawlers",
+        "apotheosis:core/breach",
+        "apotheosis:core/combatant",
+        "apotheosis:core/guardian",
+        "apotheosis:core/lightning",
+        "apotheosis:core/lunar",
+        "apotheosis:core/samurai",
+        "apotheosis:core/slipstream",
+        "apotheosis:core/solar",
+        "apotheosis:core/splendor",
+        "apotheosis:core/tyrannical",
+        "apotheosis:core/warlord"
+      ]
+    },
+    {
+      "chance": 0.2,
+      "pattern": {
+        "domain": "twilightforest",
+        "path_regex": "structures.*"
+      },
+      "purities": [
+        "cracked",
+        "chipped"
+      ],
+      "gems": [
+        "apotheosis:core/ballast",
+        "apotheosis:core/brawlers",
+        "apotheosis:core/breach",
+        "apotheosis:core/combatant",
+        "apotheosis:core/guardian",
+        "apotheosis:core/lightning",
+        "apotheosis:core/lunar",
+        "apotheosis:core/samurai",
+        "apotheosis:core/slipstream",
+        "apotheosis:core/solar",
+        "apotheosis:core/splendor",
+        "apotheosis:core/tyrannical",
+        "apotheosis:core/warlord"
+      ]
+    }
+  ],
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "apotheosis"
+    }
+  ]
+}

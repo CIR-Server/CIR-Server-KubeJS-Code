@@ -1,0 +1,12 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": [
+    "deeperdarker:deeplands",
+    "deeperdarker:echoing_forest",
+    "deeperdarker:blooming_caverns"
+  ],
+  "features": [
+    "kubejs:otherside/sculk_stone_zinc_ore"
+  ],
+  "step": "underground_ores"
+}

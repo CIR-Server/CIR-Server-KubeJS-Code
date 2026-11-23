@@ -372,6 +372,11 @@ StartupEvents.registry('item', event => {
     .displayName('Effect Icon Radiation')
     .texture('kubejs:item/effect_radiation')
 
+    // Advancement icon only; keep out of the creative inventory.
+    event.create('kubejs:icon_crosshair')
+    .displayName('Icon_Crosshair')
+    .texture('kubejs:item/icon_crosshair')
+
   })
   
 
@@ -390,4 +395,5 @@ StartupEvents.modifyCreativeTab('kubejs:tab', event => {
   event.remove('kubejs:effect_anti_radiation')
   event.remove('kubejs:effect_bombegranate_support')
   event.remove('kubejs:effect_radiation')
+  event.remove('kubejs:icon_crosshair')
 })

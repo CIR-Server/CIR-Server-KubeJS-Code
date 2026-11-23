@@ -4,6 +4,36 @@
  * @description 服务端事件相关 KubeJS 脚本
  */
 console.log('Loading KubeJS Code: "UndKJS-BlockEvent.js"');
+// Persistent server state survives /reload; timestamps use real milliseconds.
+var RIKJS_RELOADER_COOLDOWN_KEY = 'cir_reloader_cooldown_until'
+var RIKJS_RELOADER_PENDING_KEY = 'cir_reloader_pending_since'
+var RIKJS_RELOADER_COOLDOWN_MS = 5 * 60 * 1000
+
+function rikjsReloaderBlocked(server) {
+  var data = server.getPersistentData()
+  var now = Date.now()
+  if (now < Number(data.getLong(RIKJS_RELOADER_COOLDOWN_KEY))) return true
+  var pending = Number(data.getLong(RIKJS_RELOADER_PENDING_KEY))
+  // Expire an abandoned request if a reload failed before its callback.
+  return pending > 0 && now - pending < RIKJS_RELOADER_COOLDOWN_MS
+}
+
+// This is the installed KubeJS resource-reload listener, not a block event.
+// afterRecipes has no server accessor, and this build's Utils has no getServer.
+ServerEvents.afterRecipes(event => {
+  var server = Java.loadClass('net.neoforged.neoforge.server.ServerLifecycleHooks').getCurrentServer()
+  if (!server || !server.isReady()) return
+  var data = server.getPersistentData()
+  data.putLong(RIKJS_RELOADER_COOLDOWN_KEY, Date.now() + RIKJS_RELOADER_COOLDOWN_MS)
+  data.putLong(RIKJS_RELOADER_PENDING_KEY, 0)
+})
+
+ServerEvents.loaded(event => {
+  // A delayed task from a previous server process cannot still execute.
+  event.server.getPersistentData().putLong(RIKJS_RELOADER_PENDING_KEY, 0)
+})
+
+
 // 方块事件
 BlockEvents.broken("kubejs:random_block",event => {
     const player = event.getPlayer();
@@ -87,12 +117,13 @@ BlockEvents.broken("kubejs:random_block",event => {
           server.runCommandSilent(`execute at ${player.username} run setblock ~ ~-1 ~ minecraft:slime_block`)
           break;
         case 23:
-          server.runCommandSilent(`execute at ${player.username} run setblock ~ ~-1 ~ minecraft:redstone_block`)
-          server.runCommandSilent(`execute at ${player.username} run setblock ~ ~ ~ minecraft:tnt`)
+          server.runCommandSilent(`execute at ${player.username} run summon minecraft:zombie ~ ~ ~ {HandItems:[{id:"minecraft:iron_sword"},{}],ArmorItems:[{id:"minecraft:iron_boots"},{id:"minecraft:iron_leggings"},{id:"minecraft:iron_chestplate"},{id:"minecraft:iron_helmet"}],ArmorDropChances:[0.0f,0.0f,0.0f,0.0f],HandDropChances:[0.0f,0.0f],PersistenceRequired:1b}`)
+          server.runCommandSilent(`execute at ${player.username} run summon minecraft:skeleton ~ ~ ~ {HandItems:[{id:"minecraft:iron_sword"},{}],ArmorItems:[{id:"minecraft:iron_boots"},{id:"minecraft:iron_leggings"},{id:"minecraft:iron_chestplate"},{id:"minecraft:iron_helmet"}],ArmorDropChances:[0.0f,0.0f,0.0f,0.0f],HandDropChances:[0.0f,0.0f],PersistenceRequired:1b}`)
           player.tell(Text.of("RUN!!!!!!").red().bold())
           break;
         case 24:
-          server.runCommandSilent(`execute at ${player.username} run setblock ~ ~-1 ~ minecraft:sculk_shrieker[can_summon=true]`)
+          server.runCommandSilent(`execute at ${player.username} run summon minecraft:zombie ~ ~ ~ {HandItems:[{id:"minecraft:iron_sword"},{}],ArmorItems:[{id:"minecraft:iron_boots"},{id:"minecraft:iron_leggings"},{id:"minecraft:iron_chestplate"},{id:"minecraft:iron_helmet"}],ArmorDropChances:[0.0f,0.0f,0.0f,0.0f],HandDropChances:[0.0f,0.0f],PersistenceRequired:1b}`)
+          server.runCommandSilent(`execute at ${player.username} run summon minecraft:skeleton ~ ~ ~ {HandItems:[{id:"minecraft:iron_sword"},{}],ArmorItems:[{id:"minecraft:iron_boots"},{id:"minecraft:iron_leggings"},{id:"minecraft:iron_chestplate"},{id:"minecraft:iron_helmet"}],ArmorDropChances:[0.0f,0.0f,0.0f,0.0f],HandDropChances:[0.0f,0.0f],PersistenceRequired:1b}`)
           player.tell(Text.of("RUN!!!!!!").red().bold())
           break;
         case 25:
@@ -102,7 +133,7 @@ BlockEvents.broken("kubejs:random_block",event => {
           player.teleportTo(player.getX(), player.getY() + 100, player.getZ())
           break;
         case 27:
-          player.teleportTo(player.getX(), player.getY() - 3, player.getZ())
+          server.runCommandSilent(`execute at ${player.username} run summon minecraft:zombie ~ ~ ~ {HandItems:[{id:"minecraft:iron_axe"},{}],ArmorDropChances:[0.0f,0.0f,0.0f,0.0f],HandDropChances:[0.0f,0.0f],PersistenceRequired:1b,ActiveEffects:[{id:"minecraft:absorption",amplifier:1,duration:999999,show_particles:0b}]}`)
           break;
         case 28:
           player.potionEffects.clear()
@@ -276,11 +307,17 @@ BlockEvents.rightClicked("minecraft:bedrock", event => {
       const z = event.block.getZ()
       if(player != null&& item.getId() == "kubejs:reinforced_redstone_dust" && dim == "minecraft:overworld"){
         if(event.hand != "MAIN_HAND") return
+        if (!player.hasPermissions(1)) {
+          player.tell(Text.translate('commands.generic.permission').red())
+          return
+        }
         item.count--
         event.block.set("kubejs:recipe_reloader")
         console.log(`[MCDR_warning]Recipe Reloader Placed at ${x} ${y} ${z}`)
         server.tell(Text.translate("event.kubejs.recipe_reloader_set", player.username,x,y,z).gold().bold())
-        player.unlockAdvancement('kubejs:world_reload')
+        if (!player.isAdvancementDone('kubejs:world_reload')) {
+          player.unlockAdvancement('kubejs:world_reload')
+        }
       }
       else return
     })
@@ -316,18 +353,36 @@ BlockEvents.rightClicked("minecraft:bedrock", event => {
         server.tell(Text.translate("event.kubejs.recruit_guard", player.username).gold().bold())
       }
     })
-   EntityEvents.spawned(event => {
-      const entity = event.getEntity();
-      const server = event.getServer();
-      const x = entity.getX()
-      const y = entity.getY()
-      const z = entity.getZ()
-      if(entity.getType() == "minecraft:falling_block" && String(entity.nbt).includes("kubejs:recipe_reloader")){
-       console.log(`[MCDR_warning]Recipe Reload at ${x} ${y} ${z}`)
-       server.tell(Text.translate("event.kubejs.recipe_reloader_spawn", x,y,z).red().bold())
-       server.scheduleInTicks(100,()=>{
-        server.runCommand(`reload`)
-        server.tell(Text.translate("event.kubejs.recipe_reloader_reload").aqua().bold())
-       })
+EntityEvents.spawned('minecraft:falling_block', event => {
+  var entity = event.getEntity()
+  if (String(entity.nbt.getCompound('BlockState').getString('Name')) != 'kubejs:recipe_reloader') return
+  var server = event.getServer()
+  // Ignore repeats without announcing, scheduling, or extending the cooldown.
+  if (rikjsReloaderBlocked(server)) return
+
+  var data = server.getPersistentData()
+  var request = Date.now()
+  data.putLong(RIKJS_RELOADER_PENDING_KEY, request)
+  var x = entity.getX(), y = entity.getY(), z = entity.getZ()
+  console.log(`[MCDR_warning]Recipe Reload at ${x} ${y} ${z}`)
+  server.tell(Text.translate('event.kubejs.recipe_reloader_spawn', x, y, z).red().bold())
+  server.scheduleInTicks(100, () => {
+    var current = server.getPersistentData()
+    // Any intervening resource reload invalidates this queued request.
+    if (Number(current.getLong(RIKJS_RELOADER_PENDING_KEY)) !== request) return
+    if (Date.now() < Number(current.getLong(RIKJS_RELOADER_COOLDOWN_KEY))) {
+      current.putLong(RIKJS_RELOADER_PENDING_KEY, 0)
+      return
+    }
+    try {
+      if (server.runCommand('reload') <= 0) {
+        current.putLong(RIKJS_RELOADER_PENDING_KEY, 0)
+        return
       }
-    })
+      server.tell(Text.translate('event.kubejs.recipe_reloader_reload').aqua().bold())
+    } catch (error) {
+      current.putLong(RIKJS_RELOADER_PENDING_KEY, 0)
+      console.error('[CIR] Recipe reloader command failed: ' + error)
+    }
+  })
+})

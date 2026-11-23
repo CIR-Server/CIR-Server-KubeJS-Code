@@ -1,0 +1,20 @@
+{
+  "type": "createoreexcavation:drilling",
+  "drill": {
+    "item": "createoreexcavation:diamond_drill"
+  },
+  "output": [
+    {
+      "id": "kubejs:degeneration_gem",
+      "chance": 0.2
+    },
+    {
+      "id": "minecraft:netherrack",
+      "chance": 0.8
+    }
+  ],
+  "priority": 0,
+  "stress": 512,
+  "ticks": 6000,
+  "veinId": "createoreexcavation:ore_vein_type/degeneration_gem_vein"
+}

@@ -1,6 +1,6 @@
 // [CIR-电力/充能 2026-11-09] 蓄电池相关进度检测
 //
-// 每 60 秒（1200 tick）扫一次，只扫有玩家在线的维度。
+// 每 120 秒（2400 tick）扫一次，只扫有玩家在线的维度。
 //
 //   kubejs:electricity_age  ← 任意蓄电池电量不为零
 //   kubejs:charging_age     ← 全服蓄电池总能量 ≥ 100M FE
@@ -13,24 +13,26 @@
 
 ServerEvents.tick(event => {
 
-  if (event.server.tickCount % 1200 !== 0) return
+  if (event.server.tickCount % 2400 !== 0) return
 
   const players = event.server.players
   if (players.length === 0) return
 
   // 所有在线玩家都拿到 cir:charging_age，说明 FTB 那边已经发过了，不必再扫
   let allDone = true
+  let allAdvancementsDone = true
   players.forEach(player => {
     if (!PlayerStages.of(player).has('cir:charging_age')) allDone = false
+    if (!player.isAdvancementDone('kubejs:electricity_age') || !player.isAdvancementDone('kubejs:charging_age')) allAdvancementsDone = false
   })
-  if (allDone) return
+  if (allDone || allAdvancementsDone) return
 
   const AccumulatorClass = Java.loadClass('com.mrh0.createaddition.blocks.modular_accumulator.ModularAccumulatorBlockEntity')
   const THRESHOLD = 100000000
 
   const activeLevels = []
   players.forEach(player => {
-    const level = player.level()
+    const level = player.level
     if (level && activeLevels.indexOf(level) < 0) {
       activeLevels.push(level)
     }
@@ -59,17 +61,23 @@ ServerEvents.tick(event => {
     })
   })
 
-  console.info('[CIR] 蓄电池扫描: ' + activeLevels.length + ' 个维度, ' + count + ' 台, 总能量 ' + total + ' / ' + THRESHOLD)
+  console.info('[CIR] accumulator scan: ' + activeLevels.length + ' dims, ' + count + ' controllers, total ' + total + ' / ' + THRESHOLD)
 
   // 电力时代：有任何电就算
   if (total > 0) {
     players.forEach(player => {
-      event.server.runCommandSilent('advancement grant ' + player.username + ' only kubejs:electricity_age')
+      if (!player.isAdvancementDone('kubejs:electricity_age')) {
+        player.unlockAdvancement('kubejs:electricity_age')
+      }
     })
   }
 
   // 充能时代：总能量达标，只发进度，stage 交给 FTB
   if (total < THRESHOLD) return
 
-  event.server.runCommandSilent('advancement grant @a only kubejs:charging_age')
+  players.forEach(player => {
+    if (!player.isAdvancementDone('kubejs:charging_age')) {
+      player.unlockAdvancement('kubejs:charging_age')
+    }
+  })
 })

@@ -1,0 +1,14 @@
+{
+  "type": "createoreexcavation:extracting",
+  "drill": {
+    "tag": "createoreexcavation:drills"
+  },
+  "output": {
+    "amount": 10,
+    "id": "create_dragons_plus:dragon_breath"
+  },
+  "priority": 0,
+  "stress": 1024,
+  "ticks": 6000,
+  "veinId": "createoreexcavation:ore_vein_type/dragon_breath"
+}

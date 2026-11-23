@@ -35,4 +35,11 @@ const HIDDEN_INCOMPLETE = [
 
 StartupEvents.modifyCreativeTab('kubejs:tab', event => {
     HIDDEN_INCOMPLETE.forEach(id => event.remove(id))
+    // Existing gem assembly intermediates are hidden; firstmade perfect gems remain visible.
+    if (!Platform.isLoaded('apotheosis') || !Platform.isLoaded('create')) return;
+    const gemIntermediates = [{"id":"kubejs:incomplete_apotheosis_core_ballast","requires":[]},{"id":"kubejs:incomplete_apotheosis_core_brawlers","requires":[]},{"id":"kubejs:incomplete_apotheosis_core_breach","requires":[]},{"id":"kubejs:incomplete_apotheosis_core_combatant","requires":[]},{"id":"kubejs:incomplete_apotheosis_core_guardian","requires":[]},{"id":"kubejs:incomplete_apotheosis_core_lightning","requires":[]},{"id":"kubejs:incomplete_apotheosis_core_lunar","requires":[]},{"id":"kubejs:incomplete_apotheosis_core_samurai","requires":[]},{"id":"kubejs:incomplete_apotheosis_core_slipstream","requires":[]},{"id":"kubejs:incomplete_apotheosis_core_solar","requires":[]},{"id":"kubejs:incomplete_apotheosis_core_splendor","requires":[]},{"id":"kubejs:incomplete_apotheosis_core_tyrannical","requires":[]},{"id":"kubejs:incomplete_apotheosis_core_warlord","requires":[]},{"id":"kubejs:incomplete_apotheosis_overworld_earth","requires":[]},{"id":"kubejs:incomplete_apotheosis_overworld_royalty","requires":[]},{"id":"kubejs:incomplete_apotheosis_overworld_verdant_ruin","requires":[]},{"id":"kubejs:incomplete_apotheosis_the_end_mageslayer","requires":[]},{"id":"kubejs:incomplete_apotheosis_the_nether_blood_lord","requires":[]},{"id":"kubejs:incomplete_apotheosis_the_nether_inferno","requires":["apothic_enchanting"]},{"id":"kubejs:incomplete_apotheosis_the_nether_molten_breach","requires":[]},{"id":"kubejs:incomplete_apotheosis_twilight_forest","requires":["twilightforest"]},{"id":"kubejs:incomplete_apotheosis_twilight_queen","requires":["twilightforest"]},{"id":"kubejs:incomplete_apothic_compats_ars_nouveau_mana","requires":["ars_nouveau"]},{"id":"kubejs:incomplete_apothic_compats_malum_etheric","requires":["malum"]},{"id":"kubejs:incomplete_apothic_compats_malum_soul_stained","requires":["malum"]},{"id":"kubejs:incomplete_apothic_compats_malum_thief","requires":["malum"]}];
+    gemIntermediates.forEach(gem => {
+        if (gem.requires.every(mod => Platform.isLoaded(mod))) event.remove(gem.id);
+    });
+
 })

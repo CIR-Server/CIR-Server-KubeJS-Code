@@ -1,0 +1,6 @@
+{
+  "attribute.name.player.sub_level_punch_cooldown": "推力冷却",
+  "attribute.name.player.sub_level_punch_cooldown.desc": "两次推力之间的恢复时间，单位为秒。",
+  "attribute.name.player.sub_level_punch_strength": "推力强度",
+  "attribute.name.player.sub_level_punch_strength.desc": "推动实体或方块时施加的力的大小。"
+}

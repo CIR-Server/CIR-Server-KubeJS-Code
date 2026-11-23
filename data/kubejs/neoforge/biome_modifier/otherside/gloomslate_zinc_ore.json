@@ -1,0 +1,10 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": [
+    "deeperdarker:overcast_columns"
+  ],
+  "features": [
+    "kubejs:otherside/gloomslate_zinc_ore"
+  ],
+  "step": "underground_ores"
+}

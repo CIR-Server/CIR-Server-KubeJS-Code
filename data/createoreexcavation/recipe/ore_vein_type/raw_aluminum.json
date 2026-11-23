@@ -1,0 +1,18 @@
+{
+  "type": "createoreexcavation:vein",
+  "amountMultiplierMin": 10.0,
+  "amountMultiplierMax": 30.0,
+  "biomeWhitelist": "kubejs:end_outer_islands",
+  "finite": "default",
+  "icon": {
+    "count": 1,
+    "id": "neoecoae:raw_aluminum_ore"
+  },
+  "name": "{\"translate\": \"item.neoecoae.raw_aluminum_ore\"}",
+  "placement": {
+    "salt": 79195525,
+    "separation": 16,
+    "spacing": 256
+  },
+  "priority": 0
+}

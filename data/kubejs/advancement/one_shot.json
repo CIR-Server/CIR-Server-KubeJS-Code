@@ -1,0 +1,30 @@
+{
+  "parent": "kubejs:headliner",
+  "display": {
+    "icon": {
+      "id": "kubejs:icon_crosshair"
+    },
+    "title": {
+      "translate": "advancement.kubejs.one_shot.title"
+    },
+    "description": {
+      "translate": "advancement.kubejs.one_shot.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "criteria": {
+    "damage_over_500": {
+      "trigger": "minecraft:player_hurt_entity",
+      "conditions": {
+        "damage": {
+          "dealt": {
+            "min": 500.0000305175781
+          }
+        }
+      }
+    }
+  }
+}

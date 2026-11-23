@@ -1,0 +1,13 @@
+{
+  "attribute.name.generic.explosion_knockback_resistance.desc": "抵抗爆炸产生的击退效果的能力。",
+  "attribute.name.generic.movement_efficiency.desc": "移动时保留的移动速度比例，降低它会让移动变慢。",
+  "attribute.name.generic.oxygen_bonus.desc": "在水下额外增加的氧气上限，单位为空气值。",
+  "attribute.name.generic.safe_fall_distance.desc": "不会受到摔落伤害的最大下落高度，单位为方块。",
+  "attribute.name.generic.scale.desc": "生物的体型倍率，影响身高与碰撞箱大小。",
+  "attribute.name.generic.water_movement_efficiency.desc": "在水中移动时保留的移动速度比例。",
+  "attribute.name.player.block_break_speed.desc": "破坏方块时的速度倍率。",
+  "attribute.name.player.mining_efficiency.desc": "挖掘方块时额外增加的效率值。",
+  "attribute.name.player.sneaking_speed.desc": "潜行状态下的移动速度。",
+  "attribute.name.player.submerged_mining_speed.desc": "完全浸没在水中时挖掘方块的速度倍率。",
+  "attribute.name.player.sweeping_damage_ratio.desc": "横扫攻击对周围其他目标的伤害比例。"
+}

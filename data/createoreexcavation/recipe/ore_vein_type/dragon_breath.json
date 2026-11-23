@@ -1,0 +1,18 @@
+{
+  "type": "createoreexcavation:vein",
+  "amountMultiplierMin": 2.0,
+  "amountMultiplierMax": 8.0,
+  "biomeWhitelist": "kubejs:end_outer_islands",
+  "finite": "default",
+  "icon": {
+    "count": 1,
+    "id": "create_dragons_plus:dragon_breath_bucket"
+  },
+  "name": "{\"translate\": \"fluid.create_dragons_plus.dragon_breath\"}",
+  "placement": {
+    "salt": 1961433587,
+    "separation": 32,
+    "spacing": 512
+  },
+  "priority": 0
+}

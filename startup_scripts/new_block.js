@@ -54,7 +54,13 @@ event.create('kubejs:eternal_reinforced_glass')
     .defaultTranslucent()
     .transparent(true)
     .noDrops()
-    .unbreakable()
+    // 固定 90 秒挖掉，任何工具都一样（对齐强化深板岩手感）。
+    // 原理：方块不挂任何 mineable/* 标签，工具速度恒为 1，
+    // 挖掘时间 = 硬度 * 100 / 1 / 20 秒，所以硬度 18 -> 90 秒。
+    // 硬度 >= 0 才推得动，因此不能用 unbreakable()。
+    .hardness(18.0)
+    .resistance(3600.0)
+    .tagBlock('minecraft:wither_immune')
     .displayName('Eternal Reinforced Glass')
 // [DW-搬入 2026-11-01] 从 hardcore 服恢复：AE2 强化石英玻璃（原客户端此段被注释掉）
 // 方块注册-强化石英玻璃

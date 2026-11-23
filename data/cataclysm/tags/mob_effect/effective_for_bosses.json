@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "kubejs:health_lose",
+    "kubejs:vulnerable"
+  ]
+}

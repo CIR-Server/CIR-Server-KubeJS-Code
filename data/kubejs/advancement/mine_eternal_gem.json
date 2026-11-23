@@ -1,0 +1,38 @@
+{
+  "parent": "kubejs:rare_treasure",
+  "display": {
+    "icon": {
+      "id": "kubejs:gloomslate_eternal_gem_ore"
+    },
+    "title": {
+      "translate": "advancement.kubejs.mine_eternal_gem.title"
+    },
+    "description": {
+      "translate": "advancement.kubejs.mine_eternal_gem.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "criteria": {
+    "mined_ore": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": {
+          "type_specific": {
+            "type": "minecraft:player",
+            "stats": [
+              {
+                "type": "minecraft:mined",
+                "stat": "kubejs:gloomslate_eternal_gem_ore",
+                "value": {
+                  "min": 1
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}

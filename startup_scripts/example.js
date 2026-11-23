@@ -1,5 +1,5 @@
 // priority: 0
-Platform.mods.kubejs.name = 'KubeJS CIR 4.0 Release'
+Platform.mods.kubejs.name = 'CIR Server'
 // Visit the wiki for more info - https://kubejs.com/、
 
 console.info('----------------------------------------------')

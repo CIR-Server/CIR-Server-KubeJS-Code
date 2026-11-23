@@ -1,0 +1,18 @@
+{
+  "type": "createoreexcavation:vein",
+  "amountMultiplierMin": 8.0,
+  "amountMultiplierMax": 24.0,
+  "biomeWhitelist": "kubejs:end_outer_islands",
+  "finite": "default",
+  "icon": {
+    "count": 1,
+    "id": "neoecoae:raw_tungsten_ore"
+  },
+  "name": "{\"translate\": \"item.neoecoae.raw_tungsten_ore\"}",
+  "placement": {
+    "salt": 1826000105,
+    "separation": 16,
+    "spacing": 256
+  },
+  "priority": 0
+}

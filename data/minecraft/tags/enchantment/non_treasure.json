@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "kubejs:blood_thirsty",
+    "kubejs:duel",
+    "kubejs:toxic",
+    "kubejs:health_theft",
+    "kubejs:rapid_cooldown"
+  ]
+}

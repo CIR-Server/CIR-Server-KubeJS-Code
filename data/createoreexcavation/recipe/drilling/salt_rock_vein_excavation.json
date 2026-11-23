@@ -1,0 +1,15 @@
+{
+  "type": "createoreexcavation:drilling",
+  "drill": {
+    "item": "createoreexcavation:drill"
+  },
+  "output": [
+    {
+      "id": "expandeddelight:salt_rock"
+    }
+  ],
+  "priority": 0,
+  "stress": 256,
+  "ticks": 6000,
+  "veinId": "createoreexcavation:ore_vein_type/salt_rock_vein"
+}

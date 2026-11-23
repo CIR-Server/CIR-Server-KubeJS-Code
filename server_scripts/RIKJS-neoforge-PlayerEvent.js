@@ -4,6 +4,10 @@
  * @description 服务端事件相关 KubeJS 脚本
  */
 console.log('Loading KubeJS Code: "RIKJS-PlayerEvent.js"');
+// Dedicated-server chat moderation can be disabled for a public release.
+var RIKJS_CHAT_RULES_CONFIG = JsonIO.read('kubejs/config/cir_chat_rules.json') || {}
+var RIKJS_SERVER_CHAT_RULES_ENABLED = RIKJS_CHAT_RULES_CONFIG.serverChatRulesEnabled !== false
+
 
 PlayerEvents.chat(event => {
   const player = event.getPlayer();
@@ -108,6 +112,7 @@ PlayerEvents.chat(event => {
   })
   //下述两段代码只适用于CIR Server，发布版本会移除
   PlayerEvents.chat(event => {
+      if (!RIKJS_SERVER_CHAT_RULES_ENABLED) return
       if( event.message.includes('宗教游戏') || event.message.includes('颗粒鸡块') ||event.message.includes('女拳')||event.message.includes('郭楠')
         || event.message.includes('傻逼吧你') || event.message.includes('勇者大人')||event.message.includes('桌饺')||event.message.includes('索嗨')
         || event.message.includes('操你妈') || event.message.includes('nmsl') || event.message.includes('线下真实') || event.message.includes('死妈')
@@ -117,6 +122,7 @@ PlayerEvents.chat(event => {
             event.cancel()}
   })
   PlayerEvents.chat(event => {
+    if (!RIKJS_SERVER_CHAT_RULES_ENABLED) return
     if(event.message.includes('散兵')||event.message.includes('忌炎')||event.message.includes('刘伟')||event.message.includes('松伦')||
     event.message.includes('仙家军')||event.message.includes('利刃')||event.message.includes('库狗')||event.message.includes('三度背叛')||
     event.message.includes('迷你世界')||event.message.includes('米学长')||event.message.includes('米孝子')||event.message.includes('mxz')||event.message.includes('NGA')
@@ -132,6 +138,9 @@ PlayerEvents.chat(event => {
     const player = event.getPlayer()  
     const server = event.getServer()
     server.scheduleInTicks(20, () => {
+    player.potionEffects.add("minecraft:resistance",20*10,1)
+    player.potionEffects.add("kubejs:antitoxic",20*20,0)
+    player.potionEffects.add("minecraft:luck",20*60*5,1)
     player.tell(Text.translate("event.kubejs.login").gold())
     player.tell(Text.translate("event.kubejs.login.2").gold())
     player.tell(Text.translate("event.kubejs.login.3").gold())

@@ -1,0 +1,18 @@
+{
+  "type": "createoreexcavation:vein",
+  "amountMultiplierMin": 10.0,
+  "amountMultiplierMax": 30.0,
+  "biomeWhitelist": "twilightforest:in_twilight_forest",
+  "finite": "default",
+  "icon": {
+    "count": 1,
+    "id": "apotheosis:gem_dust"
+  },
+  "name": "{\"translate\": \"item.apotheosis.gem_dust\"}",
+  "placement": {
+    "salt": 1999909933,
+    "separation": 16,
+    "spacing": 256
+  },
+  "priority": 0
+}

@@ -28,6 +28,14 @@ const CIR_STAGES = [
   'cir:sin16',
   'cir:sin64',
   'cir:stella',
+  'cir:lightning_foundation',
+  'cir:lightning_industry',
+  'cir:lightning_computing',
+  'cir:lightning_endgame',
+  'cir:neco_l4',
+  'cir:neco_l6',
+  'cir:neco_l9',
+  'cir:final_stage',
   'cir:locked'
 ]
 

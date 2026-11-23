@@ -1,0 +1,10 @@
+{
+  "attribute.cataclysm.additional_critical_damage": "百分比爆伤增幅",
+  "attribute.cataclysm.additional_critical_damage.desc": "暴击时按百分比额外增加的伤害加成。",
+  "attribute.cataclysm.charge_time": "蓄力时间",
+  "attribute.cataclysm.charge_time.desc": "灾变注册的预留属性，当前版本没有实际效果。",
+  "attribute.cataclysm.eat_speed": "进食速度",
+  "attribute.cataclysm.eat_speed.desc": "进食动作的播放速度倍率。",
+  "attribute.cataclysm.nature_heal": "百分比生命自回复速率",
+  "attribute.cataclysm.nature_heal.desc": "生命值自然恢复的速率，以百分比表示。"
+}
